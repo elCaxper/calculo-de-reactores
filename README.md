@@ -42,4 +42,7 @@ Los parámetros usados son:
 11. Temperatura del intercambiador de calor.
 12. Tipo de reacción (exotérmico o endotérmico)
 
-
+* Item
+* Item
+- Item
+- Item

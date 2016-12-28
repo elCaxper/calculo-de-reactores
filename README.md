@@ -15,43 +15,33 @@ Los parámetros usados son:
 1. Temperatura inicial.
 2. Concentración inicial.
 3. Energía de activación.
-4. Constante k~o.
+4. Constante $k_o$.
 
 ### Reactores adiabático 
 Los parámetros usados son:  
 
-1. Temperatura inicial
-2. Concentración inicial
-3. Energía de activación
-4. Constante k~o
+1. Temperatura inicial.
+2. Concentración inicial.
+3. Energía de activación.
+4. Constante $k_o$.
 5. Calor de reacción.
 6. Peso molecular.
 7. Densidad de la mezcla.
-8. Tipo de reacción (exotérmico o endotérmico)
+8. Tipo de reacción (exotérmico o endotérmico).
 
 ### Reactores no isotermo y no adiabático 
 Los parámetros usados son:  
 
-1. Temperatura inicial
-2. Concentración inicial
-3. Energía de activación
-4. Constante k~o
+1. Temperatura inicial.
+2. Concentración inicial.
+3. Energía de activación.
+4. Constante $k_o$.
 5. Calor de reacción.
 6. Peso molecular.
 7. Calor específico
 8. Densidad de la mezcla.
 9. Coeficiente de transmisión de calor.
-10. Area de transmisión de calor
+10. Area de transmisión de calor.
 11. Temperatura del intercambiador de calor.
-12. Tipo de reacción (exotérmico o endotérmico)
+12. Tipo de reacción (exotérmico o endotérmico).
 
-* Item
-* Item
-- Item
-- Item
-
-1. Item
-2. Item
-   * Mixed
-   * Mixed
-3. Item

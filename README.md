@@ -42,5 +42,21 @@ Los parámetros usados son:
 8. Densidad de la mezcla.
 9. Coeficiente de transmisión de calor.
 10. Area de transmisión de calor.
-11. Temperatura del intercambiador de calor.
-12. Tipo de reacción (exotérmico o endotérmico).
+11. Volumen del reactor.
+12. Temperatura del intercambiador de calor.
+13. Tipo de reacción (exotérmico o endotérmico).
+
+
+### Optimización de reactores
+A partir de ciertos parámetros se puede calcular la conversión optima y el tiempo óptimo de operación.  
+Los parámetros usados son:  
+
+1. Candida de moles a reaccionar.
+2. Temperatura inicial.
+3. Concentración inicial.
+4. Energía de activación.
+5. Constante k<sub>o</sub>.
+6. Volumen del reactor.
+7. Coste de la reacción.
+8. Valor aumentado por mol transformado.
+

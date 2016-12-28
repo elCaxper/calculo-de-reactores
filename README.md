@@ -10,14 +10,16 @@ Permite calcular reactores químicos discontinuos, continuos y de lecho fijo. Ta
 Se puede calcular el tiempo y temperatura para una conversión determinada. El cálculo se puede realizar para distintos órdenes de reacción.
 
 ### Reactores isotermos 
-Los parámetros usados son: 
+Los parámetros usados son:  
+
 1. Temperatura inicial.
 2. Concentración inicial.
 3. Energía de activación.
 4. Constante k~o.
 
 ### Reactores adiabático 
-Los parámetros usados son: 
+Los parámetros usados son:  
+
 1. Temperatura inicial
 2. Concentración inicial
 3. Energía de activación
@@ -28,7 +30,8 @@ Los parámetros usados son:
 8. Tipo de reacción (exotérmico o endotérmico)
 
 ### Reactores no isotermo y no adiabático 
-Los parámetros usados son: 
+Los parámetros usados son:  
+
 1. Temperatura inicial
 2. Concentración inicial
 3. Energía de activación

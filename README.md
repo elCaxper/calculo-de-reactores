@@ -15,7 +15,7 @@ Los parámetros usados son:
 1. Temperatura inicial.
 2. Concentración inicial.
 3. Energía de activación.
-4. Constante $k_o$.
+4. Constante k<sub>o</sub>.
 
 ### Reactores adiabático 
 Los parámetros usados son:  
@@ -23,7 +23,7 @@ Los parámetros usados son:
 1. Temperatura inicial.
 2. Concentración inicial.
 3. Energía de activación.
-4. Constante $k_o$.
+4. Constante k<sub>o</sub>.
 5. Calor de reacción.
 6. Peso molecular.
 7. Densidad de la mezcla.
@@ -35,7 +35,7 @@ Los parámetros usados son:
 1. Temperatura inicial.
 2. Concentración inicial.
 3. Energía de activación.
-4. Constante $k_o$.
+4. Constante k<sub>o</sub>.
 5. Calor de reacción.
 6. Peso molecular.
 7. Calor específico
@@ -44,4 +44,3 @@ Los parámetros usados son:
 10. Area de transmisión de calor.
 11. Temperatura del intercambiador de calor.
 12. Tipo de reacción (exotérmico o endotérmico).
-

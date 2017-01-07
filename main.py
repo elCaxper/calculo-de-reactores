@@ -1,4 +1,4 @@
-
+import os
 import sys
 from PySide import QtCore, QtGui
 from ventana_principal import Ventana_principal
@@ -71,8 +71,10 @@ class Crear_programa(QMainWindow, Ventana_principal):
         super(Crear_programa, self).__init__(None)
         self.setupUi(self)
 
-        logo_etsii = QtGui.QPixmap("./imagenes/LogoETSII.png")
-        logo_uclm = QtGui.QPixmap("./imagenes/logouclm_NUEVO.png")
+        fn = os.path.join(os.path.dirname(__file__), 'imagenes')
+
+        logo_etsii = QtGui.QPixmap(fn+"/LogoETSII.png")
+        logo_uclm = QtGui.QPixmap(fn+"/logouclm_NUEVO.png")
         self.lb_foto_2.setPixmap(QtGui.QPixmap(logo_etsii))
         self.lb_foto_1.setPixmap(QtGui.QPixmap(logo_uclm))
 

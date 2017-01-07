@@ -5,7 +5,7 @@ import numpy as np
 import pyqtgraph as pg
 
 
-class Reactor_discontinuo(QtGui.QWidget,Ui_Form):
+class Reactor_discontinuo_isotermo(QtGui.QWidget,Ui_Form):
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
@@ -54,14 +54,15 @@ class Reactor_discontinuo(QtGui.QWidget,Ui_Form):
         self.plot.plot(y, x, pen=None, symbol='o')  ## setting pen=None disables line drawing
 
 
+if __name__ == '__main__':
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
-# MainWindow = QtGui.QWidget()
-ui = Reactor_discontinuo()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_discontinuo_isotermo()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

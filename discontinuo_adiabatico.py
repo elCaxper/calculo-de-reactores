@@ -7,7 +7,7 @@ import pyqtgraph as pg
 import pyqtgraph as pg
 
 
-class Reactor_discontinuo(QtGui.QWidget,Ui_Form):
+class Reactor_discontinuo_adiabatico(QtGui.QWidget,Ui_Form):
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
@@ -79,14 +79,15 @@ class Reactor_discontinuo(QtGui.QWidget,Ui_Form):
         curve.setShadowPen(pg.mkPen((70, 70, 30), width=6, cosmetic=True))
 
 
+if __name__ == '__main__':
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
-# MainWindow = QtGui.QWidget()
-ui = Reactor_discontinuo()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_discontinuo_adiabatico()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

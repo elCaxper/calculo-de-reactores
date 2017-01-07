@@ -86,14 +86,14 @@ class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
         curve.setShadowPen(pg.mkPen((70, 70, 30), width=6, cosmetic=True))
 
 
+if __name__ == '__main__':
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
-
-# MainWindow = QtGui.QWidget()
-ui = Reactor_disc_no_adi_no_iso()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_disc_no_adi_no_iso()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

@@ -154,15 +154,16 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
             self.le_volumen.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)[0]))))
             self.le_temp.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)[1]))))
 
+if __name__ == '__main__':
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
 
-# MainWindow = QtGui.QWidget()
-ui = Reactor_FP_adiabatico()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_FP_adiabatico()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

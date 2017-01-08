@@ -9,6 +9,13 @@ from disc_isotermo import Reactor_discontinuo_isotermo
 from discontinuo_adiabatico import Reactor_discontinuo_adiabatico
 from dis_no_adi_no_isot import Reactor_disc_no_adi_no_iso
 from condiciones_optimas import Reac_dis_cond_optimas
+
+from reactor_FP_isotermo import Reactor_FP_isotermo
+from reactor_FP_adiabatico import Reactor_FP_adiabatico
+
+from reactor_MP_conversion import Reactor_mp_conversion
+from reactor_MP_volumen import Reactor_mp_volumen
+
 import numpy as np
 import pyqtgraph as pg
 
@@ -24,6 +31,12 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
         self.btn_dis_no_iso_no_adi.clicked.connect(self.ejecutar_dis_no_iso_no_adi)
         self.btn_dis_con.clicked.connect(self.ejecutar_dis_con)
 
+        self.btn_con_iso.clicked.connect(self.ejecutar_con_iso)
+        self.btn_con_adi.clicked.connect(self.ejecutar_con_adi)
+
+        self.btn_fijo_conv.clicked.connect(self.ejecutar_fijo_con)
+        self.btn_fijo_vol.clicked.connect(self.ejecutar_fijo_vol)
+
 
         self.btn_salir.clicked.connect(self.close)
 
@@ -31,6 +44,12 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
         self.reac_dis_adi = None
         self.reac_dis_no_iso_no_adi = None
         self.reac_dis_cond = None
+
+        self.reac_con_iso = None
+        self.reac_con_adi = None
+
+        self.reac_fijo_con = None
+        self.reac_fijo_vol = None
 
     def center(self):
         qr = self.frameGeometry()
@@ -60,6 +79,27 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
         if self.reac_dis_cond == None:
             self.reac_dis_cond = Reac_dis_cond_optimas()
         self.reac_dis_cond.show()
+
+    def ejecutar_con_iso(self):
+        if self.reac_con_iso == None:
+            self.reac_con_iso = Reactor_FP_isotermo()
+        self.reac_con_iso.show()
+
+    def ejecutar_con_adi(self):
+        if self.reac_con_adi == None:
+            self.reac_con_adi = Reactor_FP_adiabatico()
+        self.reac_con_adi.show()
+
+    def ejecutar_fijo_con(self):
+        if self.reac_fijo_con == None:
+            self.reac_fijo_con = Reactor_mp_conversion()
+        self.reac_fijo_con.show()
+
+    def ejecutar_fijo_vol(self):
+        if self.reac_fijo_vol == None:
+            self.reac_fijo_vol = Reactor_mp_volumen()
+        self.reac_fijo_vol.show()
+
 
 
 

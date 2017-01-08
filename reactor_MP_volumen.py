@@ -104,15 +104,16 @@ class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
             self.le_xa.setText(str(self.conv_fin))
             self.le_volumen.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)))))
 
+if __name__ == '__main__':
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
 
-# MainWindow = QtGui.QWidget()
-ui = Reactor_mp_volumen()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_mp_volumen()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'reac_isotermo.ui'
 #
-# Created: Sat Nov 26 12:42:52 2016
+# Created: Mon Jan  9 23:57:23 2017
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -123,6 +123,9 @@ class Ui_Form(object):
         self.horizontalLayout_3.addWidget(self.lineEdit_2)
         self.horizontalLayout_12.addLayout(self.horizontalLayout_3)
         self.verticalLayout_2.addLayout(self.horizontalLayout_12)
+        self.btn_mostrar_resultado = QtGui.QPushButton(self.layoutWidget)
+        self.btn_mostrar_resultado.setObjectName("btn_mostrar_resultado")
+        self.verticalLayout_2.addWidget(self.btn_mostrar_resultado)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -149,5 +152,6 @@ class Ui_Form(object):
         self.btn_calcular.setText(QtGui.QApplication.translate("Form", "Calcular", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_10.setText(QtGui.QApplication.translate("Form", "Xa", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_2.setText(QtGui.QApplication.translate("Form", "Tiempo [min]", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_mostrar_resultado.setText(QtGui.QApplication.translate("Form", "Mostar resultados", None, QtGui.QApplication.UnicodeUTF8))
 
 from pyqtgraph import PlotWidget

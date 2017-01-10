@@ -257,6 +257,13 @@
       </item>
      </layout>
     </item>
+    <item>
+     <widget class="QPushButton" name="btn_mostrar_resultado">
+      <property name="text">
+       <string>Mostar resultados</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
  </widget>

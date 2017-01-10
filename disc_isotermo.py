@@ -1,8 +1,18 @@
+from __future__ import unicode_literals
 import sys
 from PySide import QtCore, QtGui
+
 from ventana_disc_iso import Ui_Form
 import numpy as np
-import pyqtgraph as pg
+
+import matplotlib
+
+matplotlib.use('Qt4Agg')
+matplotlib.rcParams['backend.qt4']='PySide'
+
+from show_cursor import SnaptoCursor, Cursor
+import matplotlib.pyplot as plt
+
 
 
 class Reactor_discontinuo_isotermo(QtGui.QWidget,Ui_Form):
@@ -17,6 +27,8 @@ class Reactor_discontinuo_isotermo(QtGui.QWidget,Ui_Form):
         self.R = 8.3143
         self.plot.setLabel('left', 'Conversión')
         self.plot.setLabel('bottom', 'Tiempo', units='s')
+
+        self.btn_mostrar_resultado.clicked.connect(self.mostrar_resultado)
 
     def leer(self):
         self.orden = float(self.cb_orden.currentText()[0].strip())
@@ -41,18 +53,36 @@ class Reactor_discontinuo_isotermo(QtGui.QWidget,Ui_Form):
         return np.log((conv)/(1-conv))/self.K/self.Cao
 
     def plotear(self):
-        x = np.arange(self.conv_ini,self.conv_fin,self.deltaT)
+        self.x = np.arange(self.conv_ini,self.conv_fin,self.deltaT)
         if self.orden == 0:
             f = np.vectorize(self.f0)
         elif self.orden == 1:
             f = np.vectorize(self.f1)
         else:
             f = np.vectorize(self.f2)
-        y = f(x)
+        self.y = f(self.x)
         print(self.K)
         self.plot.clear()
-        self.plot.plot(y, x, pen=None, symbol='o')  ## setting pen=None disables line drawing
+        self.plot.plot(self.y, self.x, pen=None, symbol='o')  ## setting pen=None disables line drawing
 
+    def mostrar_resultado(self):
+        # t = np.arange(0.0, 1.0, 0.01)
+        # s = np.sin(2 * 2 * np.pi * t)
+        self.fig, self.ax = plt.subplots()
+        self.ax.set_xlim([min(self.y), max(self.y)])
+        self.ax.set_ylim([min(self.x), max(self.x)])
+        self.ax.set_xlabel('tiempo (s)')
+        self.ax.set_ylabel('conversion')
+        # cursor = Cursor(ax)
+        self.cursor = SnaptoCursor(self.ax, self.y, self.x)
+        plt.connect('motion_notify_event', self.cursor.mouse_move)
+
+        self.ax.plot(self.y, self.x, 'o')
+
+        # Hace que matlplolib controle todas las figuras con sus propios hilos de forma independiente a la gui principal
+        # sustituye a la funcion plt.show()
+        plt.ion()
+        plt.show()
 
 if __name__ == '__main__':
 
@@ -63,6 +93,5 @@ if __name__ == '__main__':
 
     # MainWindow = QtGui.QWidget()
     ui = Reactor_discontinuo_isotermo()
-    # ui.setupUi(MainWindow)
     ui.show()
-    app.exec_()
+    sys.exit(app.exec_())

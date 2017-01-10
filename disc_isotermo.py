@@ -6,12 +6,11 @@ from ventana_disc_iso import Ui_Form
 import numpy as np
 
 import matplotlib
-
 matplotlib.use('Qt4Agg')
 matplotlib.rcParams['backend.qt4']='PySide'
+import matplotlib.pyplot as plt
 
 from show_cursor import SnaptoCursor, Cursor
-import matplotlib.pyplot as plt
 
 
 

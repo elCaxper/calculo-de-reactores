@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'reac_no_iso_no_adi.ui'
 #
-# Created: Tue Dec 27 14:02:36 2016
+# Created: Tue Jan 10 01:47:33 2017
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -14,7 +14,7 @@ class Ventana_dis_no_iso_no_adi(object):
         Form.setObjectName("Form")
         Form.resize(788, 643)
         self.layoutWidget = QtGui.QWidget(Form)
-        self.layoutWidget.setGeometry(QtCore.QRect(340, 40, 431, 381))
+        self.layoutWidget.setGeometry(QtCore.QRect(340, 40, 431, 401))
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.layoutWidget)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -43,6 +43,9 @@ class Ventana_dis_no_iso_no_adi(object):
         self.horizontalLayout_3.addWidget(self.lineEdit_2)
         self.horizontalLayout_12.addLayout(self.horizontalLayout_3)
         self.verticalLayout_2.addLayout(self.horizontalLayout_12)
+        self.btn_mostrar_resultado = QtGui.QPushButton(self.layoutWidget)
+        self.btn_mostrar_resultado.setObjectName("btn_mostrar_resultado")
+        self.verticalLayout_2.addWidget(self.btn_mostrar_resultado)
         self.groupBox_2 = QtGui.QGroupBox(Form)
         self.groupBox_2.setGeometry(QtCore.QRect(0, 20, 341, 611))
         self.groupBox_2.setObjectName("groupBox_2")
@@ -217,6 +220,7 @@ class Ventana_dis_no_iso_no_adi(object):
         Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_10.setText(QtGui.QApplication.translate("Form", "Xa", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_2.setText(QtGui.QApplication.translate("Form", "Tiempo [min]", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_mostrar_resultado.setText(QtGui.QApplication.translate("Form", "Mostrar resultado", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setTitle(QtGui.QApplication.translate("Form", "Parámetros", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_6.setText(QtGui.QApplication.translate("Form", "Orden Reacción", None, QtGui.QApplication.UnicodeUTF8))
         self.cb_orden.setItemText(0, QtGui.QApplication.translate("Form", "0", None, QtGui.QApplication.UnicodeUTF8))

@@ -8,13 +8,21 @@ import pyqtgraph as pg
 from scipy.integrate import odeint
 from numpy import arange
 
+import matplotlib
+matplotlib.use('Qt4Agg')
+matplotlib.rcParams['backend.qt4']='PySide'
+import matplotlib.pyplot as plt
+
+from show_cursor import SnaptoCursor, Cursor
+
+
 class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
     def __init__(self):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
 
         self.btn_calcular.clicked.connect(self.leer)
-        # self.btn_ejecutar.clicked.connect(self.leer)
+        self.btn_mostrar_resultado.clicked.connect(self.mostrar_resultado)
 
         self.deltaT = 0.005
         self.R = 8.3143
@@ -68,22 +76,50 @@ class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
 
 
     def plotear(self):
-        x = np.arange(self.conv_ini,self.conv_fin,self.deltaT)
+        self.x = np.arange(self.conv_ini,self.conv_fin,self.deltaT)
         # curve = self.plot.plot(x[:], x[:], pen=None)  ## setting pen=None disables line drawing
 
         # f = np.vectorize(self.sistema)
         init_state = [self.conv_ini, self.temp_ini]
-        state = odeint(self.sistema, init_state, x)
+        self.state = odeint(self.sistema, init_state, self.x)
 
 
         # y = f(x)
         print(self.K)
         self.plot.clear()
 
-        curve = self.plot.plot(state[:,0],x[:], pen=None)  ## setting pen=None disables line drawing
+        curve = self.plot.plot(self.state[:,0],self.x[:], pen=None)  ## setting pen=None disables line drawing
         curve.curve.setClickable(True)
         curve.setPen('w')  ## white pen
         curve.setShadowPen(pg.mkPen((70, 70, 30), width=6, cosmetic=True))
+
+    def mostrar_resultado(self):
+        # t = np.arange(0.0, 1.0, 0.01)
+        # s = np.sin(2 * 2 * np.pi * t)
+        self.fig, (self.ax1, self.ax2) = plt.subplots(2, 1, sharex=True)
+        self.ax1.set_xlim([min(self.state[:,0])-0.1, max(self.state[:,0])])
+        self.ax1.set_ylim([min(self.x[:]-0.1), max(self.x[:])])
+
+        self.ax1.set_ylabel('conversion')
+        # cursor = Cursor(ax)
+        self.cursor = SnaptoCursor(self.ax1, self.state[:,0],self.x[:])
+        plt.connect('motion_notify_event', self.cursor.mouse_move)
+
+        # self.ax2.set_xlim([min(self.state[:, 0])-5, max(self.state[:, 0])])
+        self.ax2.set_ylim([min(self.state[:, 1]), max(self.state[:, 1])+10])
+        self.ax2.set_ylabel('temperatura (K)')
+        self.ax2.set_xlabel('tiempo (s)')
+
+        self.cursor2 = SnaptoCursor(self.ax2, self.state[:, 0], self.state[:, 1])
+        plt.connect('motion_notify_event', self.cursor2.mouse_move)
+
+        self.ax1.plot(self.state[:,0],self.x[:], '-')
+        self.ax2.plot(self.state[:, 0], self.state[:, 1], '-')
+
+        # Hace que matlplolib controle todas las figuras con sus propios hilos de forma independiente a la gui principal
+        # sustituye a la funcion plt.show()
+        plt.ion()
+        plt.show()
 
 
 if __name__ == '__main__':

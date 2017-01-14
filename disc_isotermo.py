@@ -28,6 +28,7 @@ class Reactor_discontinuo_isotermo(QtGui.QWidget,Ui_Form):
         self.plot.setLabel('bottom', 'Tiempo', units='s')
 
         self.btn_mostrar_resultado.clicked.connect(self.mostrar_resultado)
+        self.le_xa.editingFinished.connect(self.handleEditingFinished)
 
     def leer(self):
         self.orden = float(self.cb_orden.currentText()[0].strip())
@@ -82,6 +83,12 @@ class Reactor_discontinuo_isotermo(QtGui.QWidget,Ui_Form):
         # sustituye a la funcion plt.show()
         plt.ion()
         plt.show()
+
+    def handleEditingFinished(self):
+        if self.le_xa.isModified():
+            idx = (np.abs(self.x - float(self.le_xa.text()))).argmin()
+            self.le_time.setText(str(self.y[idx]/60))
+        self.le_xa.setModified(False)
 
 if __name__ == '__main__':
 

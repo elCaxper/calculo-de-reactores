@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>788</width>
-    <height>643</height>
+    <height>628</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>40</y>
+     <y>50</y>
      <width>431</width>
-     <height>401</height>
+     <height>431</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -38,21 +38,55 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_5"/>
+         <widget class="QLineEdit" name="le_xa"/>
         </item>
        </layout>
       </item>
       <item>
+       <widget class="QLabel" name="lb_cao_2">
+        <property name="text">
+         <string>Tiempo [min]</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QLabel" name="lb_cao_2">
-          <property name="text">
-           <string>Tiempo [min]</string>
-          </property>
-         </widget>
+         <widget class="QLineEdit" name="le_time"/>
         </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_17">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_18"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lb_cao_16">
+        <property name="text">
+         <string>Temp [k]</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_19">
         <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="le_temp_b"/>
         </item>
        </layout>
       </item>
@@ -371,7 +405,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>490</y>
+     <y>520</y>
      <width>315</width>
      <height>29</height>
     </rect>
@@ -397,7 +431,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>456</y>
+     <y>486</y>
      <width>315</width>
      <height>29</height>
     </rect>
@@ -423,7 +457,7 @@
    <property name="geometry">
     <rect>
      <x>390</x>
-     <y>530</y>
+     <y>560</y>
      <width>315</width>
      <height>27</height>
     </rect>
@@ -432,6 +466,12 @@
     <string>Calcular</string>
    </property>
   </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>btn_calcular</zorder>
+  <zorder>lb_cao_15</zorder>
  </widget>
  <customwidgets>
   <customwidget>

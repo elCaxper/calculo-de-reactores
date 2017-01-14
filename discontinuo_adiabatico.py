@@ -5,6 +5,13 @@ import numpy as np
 import scipy.integrate as integrate
 import pyqtgraph as pg
 import pyqtgraph as pg
+import matplotlib
+
+matplotlib.use('Qt4Agg')
+matplotlib.rcParams['backend.qt4']='PySide'
+import matplotlib.pyplot as plt
+
+from show_cursor import SnaptoCursor, Cursor
 
 
 class Reactor_discontinuo_adiabatico(QtGui.QWidget,Ui_Form):
@@ -14,6 +21,9 @@ class Reactor_discontinuo_adiabatico(QtGui.QWidget,Ui_Form):
 
         self.btn_calcular.clicked.connect(self.leer)
         # self.btn_ejecutar.clicked.connect(self.leer)
+        self.btn_mostrar_resultado.clicked.connect(self.mostrar_resultado)
+        self.le_xa.editingFinished.connect(self.handleEditingFinished)
+
 
         self.deltaT = 0.005
         self.R = 8.3143
@@ -65,18 +75,43 @@ class Reactor_discontinuo_adiabatico(QtGui.QWidget,Ui_Form):
 
 
     def plotear(self):
-        x = np.arange(self.conv_ini,self.conv_fin,self.deltaT)
+        self.x = np.arange(self.conv_ini,self.conv_fin,self.deltaT)
 
         f = np.vectorize(self.f0)
 
-        y = f(x)
+        self.y = f(self.x)
         print(self.K)
         self.plot.clear()
 
-        curve = self.plot.plot(y, x, pen=None)  ## setting pen=None disables line drawing
+        curve = self.plot.plot(self.y, self.x, pen=None)  ## setting pen=None disables line drawing
         curve.curve.setClickable(True)
         curve.setPen('w')  ## white pen
         curve.setShadowPen(pg.mkPen((70, 70, 30), width=6, cosmetic=True))
+
+    def mostrar_resultado(self):
+        # t = np.arange(0.0, 1.0, 0.01)
+        # s = np.sin(2 * 2 * np.pi * t)
+        self.fig, self.ax = plt.subplots()
+        self.ax.set_xlim([min(self.y), max(self.y)])
+        self.ax.set_ylim([min(self.x), max(self.x)])
+        self.ax.set_xlabel('tiempo (s)')
+        self.ax.set_ylabel('conversion')
+        # cursor = Cursor(ax)
+        self.cursor = SnaptoCursor(self.ax, self.y, self.x)
+        plt.connect('motion_notify_event', self.cursor.mouse_move)
+
+        self.ax.plot(self.y, self.x, 'o')
+
+        # Hace que matlplolib controle todas las figuras con sus propios hilos de forma independiente a la gui principal
+        # sustituye a la funcion plt.show()
+        plt.ion()
+        plt.show()
+
+    def handleEditingFinished(self):
+        if self.le_xa.isModified():
+            idx = (np.abs(self.x - float(self.le_xa.text()))).argmin()
+            self.le_time.setText(str(self.y[idx]/60))
+        self.le_xa.setModified(False)
 
 
 if __name__ == '__main__':

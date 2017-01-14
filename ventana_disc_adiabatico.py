@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'reac_adiabático.ui'
+# Form implementation generated from reading ui file 'reac_adiabatico.ui'
 #
-# Created: Sat Nov 26 14:21:35 2016
+# Created: Sat Jan 14 20:58:01 2017
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -29,20 +29,23 @@ class Ui_Form(object):
         self.lb_cao_10 = QtGui.QLabel(self.layoutWidget)
         self.lb_cao_10.setObjectName("lb_cao_10")
         self.horizontalLayout_11.addWidget(self.lb_cao_10)
-        self.lineEdit_5 = QtGui.QLineEdit(self.layoutWidget)
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.horizontalLayout_11.addWidget(self.lineEdit_5)
+        self.le_xa = QtGui.QLineEdit(self.layoutWidget)
+        self.le_xa.setObjectName("le_xa")
+        self.horizontalLayout_11.addWidget(self.le_xa)
         self.horizontalLayout_12.addLayout(self.horizontalLayout_11)
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.lb_cao_2 = QtGui.QLabel(self.layoutWidget)
         self.lb_cao_2.setObjectName("lb_cao_2")
         self.horizontalLayout_3.addWidget(self.lb_cao_2)
-        self.lineEdit_2 = QtGui.QLineEdit(self.layoutWidget)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.horizontalLayout_3.addWidget(self.lineEdit_2)
+        self.le_time = QtGui.QLineEdit(self.layoutWidget)
+        self.le_time.setObjectName("le_time")
+        self.horizontalLayout_3.addWidget(self.le_time)
         self.horizontalLayout_12.addLayout(self.horizontalLayout_3)
         self.verticalLayout_2.addLayout(self.horizontalLayout_12)
+        self.btn_mostrar_resultado = QtGui.QPushButton(self.layoutWidget)
+        self.btn_mostrar_resultado.setObjectName("btn_mostrar_resultado")
+        self.verticalLayout_2.addWidget(self.btn_mostrar_resultado)
         self.groupBox_2 = QtGui.QGroupBox(Form)
         self.groupBox_2.setGeometry(QtCore.QRect(0, 20, 341, 571))
         self.groupBox_2.setObjectName("groupBox_2")
@@ -175,6 +178,7 @@ class Ui_Form(object):
         Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_10.setText(QtGui.QApplication.translate("Form", "Xa", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_2.setText(QtGui.QApplication.translate("Form", "Tiempo [min]", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_mostrar_resultado.setText(QtGui.QApplication.translate("Form", "Mostrar Resultado", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setTitle(QtGui.QApplication.translate("Form", "Parámetros", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_6.setText(QtGui.QApplication.translate("Form", "Orden Reacción", None, QtGui.QApplication.UnicodeUTF8))
         self.cb_orden.setItemText(0, QtGui.QApplication.translate("Form", "0", None, QtGui.QApplication.UnicodeUTF8))

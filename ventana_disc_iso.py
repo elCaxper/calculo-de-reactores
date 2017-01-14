@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'reac_isotermo.ui'
 #
-# Created: Mon Jan  9 23:57:23 2017
+# Created: Sat Jan 14 20:41:40 2017
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -109,18 +109,18 @@ class Ui_Form(object):
         self.lb_cao_10 = QtGui.QLabel(self.layoutWidget)
         self.lb_cao_10.setObjectName("lb_cao_10")
         self.horizontalLayout_11.addWidget(self.lb_cao_10)
-        self.lineEdit_5 = QtGui.QLineEdit(self.layoutWidget)
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.horizontalLayout_11.addWidget(self.lineEdit_5)
+        self.le_xa = QtGui.QLineEdit(self.layoutWidget)
+        self.le_xa.setObjectName("le_xa")
+        self.horizontalLayout_11.addWidget(self.le_xa)
         self.horizontalLayout_12.addLayout(self.horizontalLayout_11)
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.lb_cao_2 = QtGui.QLabel(self.layoutWidget)
         self.lb_cao_2.setObjectName("lb_cao_2")
         self.horizontalLayout_3.addWidget(self.lb_cao_2)
-        self.lineEdit_2 = QtGui.QLineEdit(self.layoutWidget)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.horizontalLayout_3.addWidget(self.lineEdit_2)
+        self.le_time = QtGui.QLineEdit(self.layoutWidget)
+        self.le_time.setObjectName("le_time")
+        self.horizontalLayout_3.addWidget(self.le_time)
         self.horizontalLayout_12.addLayout(self.horizontalLayout_3)
         self.verticalLayout_2.addLayout(self.horizontalLayout_12)
         self.btn_mostrar_resultado = QtGui.QPushButton(self.layoutWidget)

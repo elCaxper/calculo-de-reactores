@@ -23,6 +23,7 @@ class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
 
         self.btn_calcular.clicked.connect(self.leer)
         self.btn_mostrar_resultado.clicked.connect(self.mostrar_resultado)
+        self.le_xa.editingFinished.connect(self.handleEditingFinished)
 
         self.deltaT = 0.005
         self.R = 8.3143
@@ -120,6 +121,13 @@ class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
         # sustituye a la funcion plt.show()
         plt.ion()
         plt.show()
+
+    def handleEditingFinished(self):
+        if self.le_xa.isModified():
+            idx = (np.abs(self.x - float(self.le_xa.text()))).argmin()
+            self.le_time.setText(str(self.state[idx, 0]/60))
+            self.le_temp_b.setText(str(self.state[idx, 1]))
+        self.le_xa.setModified(False)
 
 
 if __name__ == '__main__':

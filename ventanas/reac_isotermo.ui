@@ -237,7 +237,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_5"/>
+         <widget class="QLineEdit" name="le_xa"/>
         </item>
        </layout>
       </item>
@@ -251,7 +251,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="le_time"/>
         </item>
        </layout>
       </item>

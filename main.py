@@ -16,6 +16,7 @@ from reactor_FP_adiabatico import Reactor_FP_adiabatico
 from reactor_MP_conversion import Reactor_mp_conversion
 from reactor_MP_volumen import Reactor_mp_volumen
 
+from visor_ayuda import Visor_documentacion
 import numpy as np
 import pyqtgraph as pg
 
@@ -130,6 +131,11 @@ class Crear_programa(QMainWindow, Ventana_principal):
 
         self.btn_empezar.clicked.connect(self.empezar)
 
+        self.mostrar_guia.clicked.connect(self.mostrar_ayuda)
+
+        self.visor_ayuda =None
+
+
         self.center()
 
     def center(self):
@@ -170,6 +176,12 @@ class Crear_programa(QMainWindow, Ventana_principal):
             event.accept()
         else:
             event.ignore()
+
+    def mostrar_ayuda(self):
+        print("Mostrando ayuda")
+        if self.visor_ayuda == None:
+            self.visor_ayuda = Visor_documentacion()
+        self.visor_ayuda.show()
 
 
 if __name__ == '__main__':

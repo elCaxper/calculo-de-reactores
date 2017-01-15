@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ventana_principal.ui'
 #
-# Created: Sat Jan  7 19:00:15 2017
+# Created: Sun Jan 15 17:18:51 2017
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -42,9 +42,9 @@ class Ventana_principal(object):
         self.btn_salir = QtGui.QPushButton(Form)
         self.btn_salir.setGeometry(QtCore.QRect(200, 330, 99, 27))
         self.btn_salir.setObjectName("btn_salir")
-        self.pushButton_3 = QtGui.QPushButton(Form)
-        self.pushButton_3.setGeometry(QtCore.QRect(350, 330, 99, 27))
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.mostrar_guia = QtGui.QPushButton(Form)
+        self.mostrar_guia.setGeometry(QtCore.QRect(350, 330, 99, 27))
+        self.mostrar_guia.setObjectName("mostrar_guia")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -56,5 +56,5 @@ class Ventana_principal(object):
         self.lb_foto_1.setText(QtGui.QApplication.translate("Form", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_empezar.setText(QtGui.QApplication.translate("Form", "Empezar", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_salir.setText(QtGui.QApplication.translate("Form", "Salir", None, QtGui.QApplication.UnicodeUTF8))
-        self.pushButton_3.setText(QtGui.QApplication.translate("Form", "Guia Usuario", None, QtGui.QApplication.UnicodeUTF8))
+        self.mostrar_guia.setText(QtGui.QApplication.translate("Form", "Guia Usuario", None, QtGui.QApplication.UnicodeUTF8))
 

@@ -94,7 +94,7 @@
     <string>Salir</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="mostrar_guia">
    <property name="geometry">
     <rect>
      <x>350</x>

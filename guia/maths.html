@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>LaTeX Mathematics Examples</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="maths.tex"> 
+<meta name="date" content="2017-01-15 17:04:00"> 
+<link rel="stylesheet" type="text/css" href="maths.css"> 
+</head><body 
+>
+     <div class="maketitle">
+                                                                                                           
+                                                                                                           
+                                                                                                           
+                                                                                                           
+
+<h2 class="titleHead"><span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
+class="E">E</span>X</span></span>&#x00A0;Mathematics Examples</h2>
+<div class="author" ><span 
+class="cmr-17x-x-143">Prof Tony Roberts</span></div><br />
+<div class="date" ><span 
+class="cmr-17x-x-143">January 15, 2017</span></div>
+     </div>
+     <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>Contents</h3>
+     <div class="tableofcontents">
+     <span class="sectionToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">Delimiters</a></span>
+<br />     <span class="sectionToc" >2 <a 
+href="#x1-30002" id="QQ2-1-3">Spacing</a></span>
+<br />     <span class="sectionToc" >3 <a 
+href="#x1-40003" id="QQ2-1-4">Arrays</a></span>
+<br />     <span class="sectionToc" >4 <a 
+href="#x1-50004" id="QQ2-1-5">Equation arrays</a></span>
+<br />     <span class="sectionToc" >5 <a 
+href="#x1-60005" id="QQ2-1-6">Functions</a></span>
+<br />     <span class="sectionToc" >6 <a 
+href="#x1-70006" id="QQ2-1-7">Accents</a></span>
+<br />     <span class="sectionToc" >7 <a 
+href="#x1-80007" id="QQ2-1-8">Command definition</a></span>
+<br />     <span class="sectionToc" >8 <a 
+href="#x1-90008" id="QQ2-1-9">Theorems et al.</a></span>
+     </div>
+                                                                                                           
+                                                                                                           
+<!--l. 17--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-20001"></a>Delimiters</h3>
+<!--l. 19--><p class="noindent" >See how the delimiters are of reasonable size in these examples
+     <center class="math-display" >
+<img 
+src="maths0x.png" alt="            [                ]
+                        b
+(a  +   b )   1  -   ---------   =  a,
+                     a  +  b
+" class="math-display" ></center>
+<!--l. 22--><p class="nopar" >
+     <center class="math-display" >
+<img 
+src="maths1x.png" alt="                |         |
+&#x2218;   -------     |x   +  y |
+    |xy   | &#x2264;   |---------| ,
+                     2
+" class="math-display" ></center>
+<!--l. 25--><p class="nopar" > even when there is no matching delimiter
+     <center class="math-display" >
+<img 
+src="maths2x.png" alt="&#x222B;                             |       &#x222B;
+    b   d2v               dv  |b          b du   dv
+        ------            ----|             ---------
+     u      2 dx   =   u      |   -                  dx.
+  a     dx                dx   a        a   dx  dx
+" class="math-display" ></center>
+<!--l. 31--><p class="nopar" >
+<!--l. 38--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-30002"></a>Spacing</h3>
+<!--l. 40--><p class="noindent" >Differentials often need a bit of help with their spacing as in
+     <center class="math-display" >
+<img 
+src="maths3x.png" alt="&#x222B; &#x222B;    xy2dxdy        =   1-x2y3,
+                          6
+" class="math-display" ></center>
+<!--l. 44--><p class="nopar" > whereas vector problems often lead to statements such as
+     <center class="math-display" >
+<img 
+src="maths4x.png" alt="           -  y                      x
+        ------------            ------------
+u  =      2       2,     v  =     2       2 ,    and       w   =   0.
+        x   +   y               x    +  y
+" class="math-display" ></center>
+<!--l. 50--><p class="nopar" > Occasionally one gets horrible line breaks when using a
+list in mathematics such as listing the first twelve primes
+<img 
+src="maths5x.png" alt="2,  3, 5,  7, 11,   13,  17,  19,   23,  29,   31,  37  "  class="math" > . In such cases, perhaps include
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-12x-x-172">\mathcode&#8216;\,="213B</span></span></span> inside the inline maths environment so that the
+list breaks: <img 
+src="maths6x.png" alt="2  , 3  , 5 , 7  , 11   , 13  , 17  , 19   , 23  , 29   , 31  , 37  "  class="math" > . Be discerning
+about when to do this as the spacing is different.
+<!--l. 60--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-40003"></a>Arrays</h3>
+<!--l. 62--><p class="noindent" >Arrays of mathematics are typeset using one of the matrix environments
+as in
+     <center class="math-display" >
+<img 
+src="maths7x.png" alt="                   &#x230A;   &#x230B;
+[              ]     1          [           ]
+  1   x     0                     1 +   xy
+                   &#x2308; y &#x2309;   =                   .
+  0   1   -  1                     y  -  1
+                     1
+" class="math-display" ></center>
+<!--l. 77--><p class="nopar" > Case statements use cases:
+     <center class="math-display" >
+<img 
+src="maths8x.png" alt="|x  | =   {x,           if x  &#x2265;   0,
+              -  x,     if x  &#x003C;   0.
+" class="math-display" ></center>
+<!--l. 84--><p class="nopar" > Many arrays have lots of dots all over the place as in
+     <center class="math-display" >
+<img 
+src="maths9x.png" alt="-  2    1      0      0     &#x22C5; &#x22C5; &#x22C5;   0
+
+  1    -  2    1      0     &#x22C5; &#x22C5; &#x22C5;   0
+
+  0     1     -  2    1     &#x22C5; &#x22C5; &#x22C5;   0
+
+  0     0      1     -  2   . ..     ...
+
+  ...      ...      ...    . ..   . ..    1
+
+
+  0     0      0    &#x22C5; &#x22C5; &#x22C5;    1     -  2
+" class="math-display" ></center>
+<!--l. 95--><p class="nopar" >
+<!--l. 102--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-50004"></a>Equation arrays</h3>
+<!--l. 104--><p class="noindent" >In the flow of a fluid film we may report <div class="eqnarray">
+     <center class="math-display" >
+<img 
+src="maths10x.png" alt="                     (               )
+            2                  1   2
+u &#x03B1;   =    &#x03F5;  &#x03BA;xxx      y  -   --y      ,                             (1 )
+                               2
+
+            3
+  v   =    &#x03F5;  &#x03BA;xxxy,                                                  (2 )
+
+  p   =    &#x03F5;&#x03BA;xx.                                                      (3 )
+                                                                                                           
+                                                                                                           
+" class="math-display" ><a 
+ id="x1-5001r1"></a><a 
+ id="x1-5001r2"></a><a 
+ id="x1-5001r3"></a></center>
+</div>Alternatively, the curl of a vector field (<span 
+class="cmmi-12x-x-172">u,v,w</span>) may be written with only
+one equation number: <div class="eqnarray">
+     <center class="math-display" >
+<img 
+src="maths11x.png" alt="           &#x2202; w       &#x2202;  v
+&#x03C9;     =    -------   -----,
+   1
+           &#x2202;  y      &#x2202;  z
+           &#x2202; u       &#x2202; w
+           -----     ------
+&#x03C9;2    =         -         ,                                    (4 )
+           &#x2202; z       &#x2202; x
+           &#x2202; v       &#x2202; u
+           -----     -----
+&#x03C9;3    =         -        .
+           &#x2202; x       &#x2202; y
+" class="math-display" ><a 
+ id="x1-5002r4"></a></center>
+</div>Whereas a derivation may look like <div class="eqnarray">
+     <center class="math-display" >
+<img 
+src="maths12x.png" alt="(p  &#x2227;  q ) &#x2228;   (p  &#x2227;   ¬q  )  =    p  &#x2227;   (q  &#x2228;  ¬q   )    by   distributive       law
+
+
+                              =    p  &#x2227;   T     by   excluded       middle
+
+                              =    p     by   identity
+" class="math-display" ></center>
+</div>
+                                                                                                           
+                                                                                                           
+<!--l. 140--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-60005"></a>Functions</h3>
+<!--l. 142--><p class="noindent" >Observe that trigonometric and other elementary functions are typeset
+properly, even to the extent of providing a thin space if followed by a
+single letter argument:
+     <center class="math-display" >
+<img 
+src="maths13x.png" alt="                                                                    (            )
+                                                                 1            1
+                                                                 --           ---
+exp   (i &#x03B8; ) =   cos   &#x03B8; +   i sin  &#x03B8;,     sinh   (log   x ) =         x  -         .
+                                                                 2            x
+" class="math-display" ></center>
+<!--l. 148--><p class="nopar" > With sub- and super-scripts placed properly on more complicated
+functions,
+     <center class="math-display" >
+<img 
+src="maths14x.png" alt=" lim    &#x2225;f  (x  )&#x2225;    =  max     |f (x  )|,
+q &#x2192; &#x221E;              q        x
+" class="math-display" ></center>
+<!--l. 154--><p class="nopar" > and large operators, such as integrals and <div class="eqnarray">
+     <center class="math-display" >
+<img 
+src="maths15x.png" alt="             &#x221E;                                n
+           &#x2211;      xn                         &#x220F;
+ ex    =          ----    where     n!   =        i,
+
+            n=0   n!                         i=1
+-----      &#x22C2;
+
+U  &#x03B1;   =         U &#x03B1;.
+
+             &#x03B1;
+" class="math-display" ></center>
+                                                                                                           
+                                                                                                           
+</div>In inline mathematics the scripts are correctly placed to the side in order
+to conserve vertical space, as in <img 
+src="maths16x.png" alt="1 &#x2215; (1  -   x )  =   &#x2211;   &#x221E;n=0   xn.  "  class="math" >
+<!--l. 172--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-70006"></a>Accents</h3>
+<!--l. 174--><p class="noindent" >Mathematical accents are performed by a short command with one
+argument, such as
+     <center class="math-display" >
+<img 
+src="maths17x.png" alt="                  &#x222B;
+                     &#x221E;
+&#x02DC;            -1---                -  i&#x03C9;x
+f (&#x03C9;  ) =                f  (x )e        dx,
+             2&#x03C0;     - &#x221E;
+" class="math-display" ></center>
+<!--l. 179--><p class="nopar" > or
+     <center class="math-display" >
+<img 
+src="maths18x.png" alt=" &#x02D9;             &#x20D7;
+&#x20D7;&#x03C9;   =   &#x20D7;r  &#x00D7;  I .
+" class="math-display" ></center>
+<!--l. 183--><p class="nopar" >
+<!--l. 189--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
+ id="x1-80007"></a>Command definition</h3>
+<!--l. 192--><p class="noindent" >The Airy function, Ai(<span 
+class="cmmi-12x-x-172">x</span>), may be incorrectly defined as this integral
+     <center class="math-display" >
+<img 
+src="maths19x.png" alt="              &#x222B;
+
+Ai  (x  ) =        exp  (s3   +   isx  )ds.
+" class="math-display" ></center>
+<!--l. 196--><p class="nopar" >
+                                                                                                           
+                                                                                                           
+<!--l. 202--><p class="indent" >     This vector identity serves nicely to illustrate two of the new
+commands:
+     <center class="math-display" >
+<img 
+src="maths20x.png" alt="                  (                 )          (                 )         (                 )
+                     &#x2202;  w       &#x2202; v               &#x2202; u      &#x2202;  w                &#x2202; v      &#x2202;  u
+&#x2207;    &#x00D7;   q  =   i    ------ -   -----   +   j     ------   ------    +  k      ------   -----    .
+
+                      &#x2202; y       &#x2202; z               &#x2202; z       &#x2202; x                &#x2202; x      &#x2202;  y
+" class="math-display" ></center>
+<!--l. 209--><p class="nopar" >
+<!--l. 214--><p class="noindent" >
+     <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
+ id="x1-90008"></a>Theorems et al.</h3>
+     <div class="newtheorem">
+<!--l. 221--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12x-x-172">Definition</span><span 
+class="cmbx-12x-x-172">&#x00A0;1</span><span 
+class="cmbx-12x-x-172">&#x00A0;(right-angled triangles)</span>  </span><a 
+ id="x1-90011"></a>    <span 
+class="cmti-12x-x-172">A     </span>right-angled
+triangle <span 
+class="cmti-12x-x-172">is a triangle whose sides of length</span><span 
+class="cmti-12x-x-172">&#x00A0;</span><img 
+src="maths21x.png" alt="a  "  class="math" ><span 
+class="cmti-12x-x-172">,</span> <img 
+src="maths22x.png" alt="b  "  class="math" > <span 
+class="cmti-12x-x-172">and</span><span 
+class="cmti-12x-x-172">&#x00A0;</span><img 
+src="maths23x.png" alt="c  "  class="math" ><span 
+class="cmti-12x-x-172">, in</span>
+<span 
+class="cmti-12x-x-172">some permutation of order, satisfies</span> <img 
+src="maths24x.png" alt="a2   +  b2  =   c2   "  class="math" ><span 
+class="cmti-12x-x-172">.</span>
+     </div>
+     <div class="newtheorem">
+<!--l. 225--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12x-x-172">Lemma</span><span 
+class="cmbx-12x-x-172">&#x00A0;2</span>  </span><span 
+class="cmti-12x-x-172">The triangle with sides of length</span><span 
+class="cmti-12x-x-172">&#x00A0;</span><img 
+src="maths25x.png" alt="3  "  class="math" ><span 
+class="cmti-12x-x-172">,</span> <img 
+src="maths26x.png" alt="4  "  class="math" > <span 
+class="cmti-12x-x-172">and</span><span 
+class="cmti-12x-x-172">&#x00A0;</span><img 
+src="maths27x.png" alt="  5  "  class="math" >
+<span 
+class="cmti-12x-x-172">is right-angled.</span>
+     </div>
+<!--l. 229--><p class="noindent" >This lemma follows from the Definition&#x00A0;<a 
+href="#x1-90011">1<!--tex4ht:ref: def:tri --></a> as <img 
+src="maths28x.png" alt="  2       2                               2
+3   +   4   =   9  +   16  =   25   =   5   "  class="math" >.
+     <div class="newtheorem">
+<!--l. 231--><p class="noindent" ><span class="head">
+                                                                                                           
+                                                                                                           
+<span 
+class="cmbx-12x-x-172">Theorem</span><span 
+class="cmbx-12x-x-172">&#x00A0;3</span><span 
+class="cmbx-12x-x-172">&#x00A0;(Pythagorean triplets)</span>  </span><a 
+ id="x1-90033"></a>  <span 
+class="cmti-12x-x-172">Triangles  with  sides</span>
+<span 
+class="cmti-12x-x-172">of  length</span>  <img 
+src="maths29x.png" alt="a  =   p2   -  q2   "  class="math" ><span 
+class="cmti-12x-x-172">,</span>  <img 
+src="maths30x.png" alt="b  =   2pq  "  class="math" >  <span 
+class="cmti-12x-x-172">and</span>  <img 
+src="maths31x.png" alt="c  =   p2  +   q2   "  class="math" >    <span 
+class="cmti-12x-x-172">are</span>
+<span 
+class="cmti-12x-x-172">right-angled triangles.</span>
+     </div>
+<!--l. 235--><p class="indent" >     Prove this Theorem&#x00A0;<a 
+href="#x1-90033">3<!--tex4ht:ref: thm:py --></a> by the algebra
+<img 
+src="maths32x.png" alt="  2       2         2       2  2             2        4         2  2       4         2  2       4         2  2       4         2       2  2       2
+a    +  b   =   (p    -   q  )   +   (2pq   )   =   p   -   2p   q   +   q   +   4p   q   =   p    +  2p    q   +  q    =   (p   +   q  )   =   c   "  class="math" >.
+      
+</body></html> 
+
+                                                                                                           
+
+

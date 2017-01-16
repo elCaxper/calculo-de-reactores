@@ -3,6 +3,12 @@ from PySide import QtCore, QtGui
 from ventana_FP_isotermo import Ui_Form
 import numpy as np
 import pyqtgraph as pg
+import matplotlib as mpl
+
+mpl.use('Qt4Agg')
+mpl.rcParams['backend.qt4']='PySide'
+import matplotlib.pyplot as plt
+from show_cursor import SnaptoCursor, Cursor
 
 
 class Reactor_FP_isotermo(QtGui.QWidget,Ui_Form):
@@ -27,7 +33,10 @@ class Reactor_FP_isotermo(QtGui.QWidget,Ui_Form):
         self.plot.setLabel('left', 'Conversión')
         self.plot.setLabel('bottom', 'Volumen', units='L')
 
+        self.btn_mostrar_resultados.setDisabled(True)
+
         self.btn_ejecutar.clicked.connect(self.ejecutar)
+        self.btn_mostrar_resultados.clicked.connect(self.mostrar_resultado)
         self.btn_reset.clicked.connect(self.resetear)
         self.btn_cerrar.clicked.connect(self.close)
 
@@ -81,7 +90,7 @@ class Reactor_FP_isotermo(QtGui.QWidget,Ui_Form):
 
     def plotear(self):
 
-        x = np.arange(0.01, self.conv_fin, self.deltaT)
+        self.x = np.arange(0.05, self.conv_fin+self.deltaT, self.deltaT)
 
         if self.orden == 0:
             f = np.vectorize(self.f0)
@@ -92,10 +101,10 @@ class Reactor_FP_isotermo(QtGui.QWidget,Ui_Form):
         else:
             f = np.vectorize(self.f2)
 
-        y = f(x)
+        self.y = f(self.x)
         self.plot.clear()
 
-        curve = self.plot.plot(y, x, pen=None)  ## setting pen=None disables line drawing
+        curve = self.plot.plot(self.y, self.x, pen=None)  ## setting pen=None disables line drawing
         curve.curve.setClickable(True)
         curve.setPen('w')  ## white pen
 
@@ -118,6 +127,9 @@ class Reactor_FP_isotermo(QtGui.QWidget,Ui_Form):
         self.le_xa.clear()
         self.plot.clear()
 
+        self.btn_mostrar_resultados.setDisabled(True)
+
+
     def ejecutar(self):
 
         if self.le_molA.text() == "" or self.le_molB.text() == "" or self.le_inerte.text() == "" or self.le_temp_ini.text() == "" or self.le_concentracion_ini.text() == "" or self.le_ener_act.text() == "" or self.le_k.text() == "" or self.le_caudal.text() == "" or self.le_conv_ini.text() == "" or self.le_conv_fin.text() == "":
@@ -138,6 +150,32 @@ class Reactor_FP_isotermo(QtGui.QWidget,Ui_Form):
 
             else:
                 self.le_volumen.setText(str(float("{0:.2f}".format(self.f2(self.conv_fin)))))
+
+        self.btn_mostrar_resultados.setEnabled(True)
+
+
+    def mostrar_resultado(self):
+
+        self.fig, self.vol = plt.subplots()
+
+        self.vol.set_title('RESULTADO')
+
+        self.vol.set_xlim([min(self.y), max(self.y)])
+        self.vol.set_ylim([min(self.x), max(self.x)])
+
+        self.vol.set_xlabel('Volumen (L)')
+        self.vol.set_ylabel('Conversión')
+
+        # cursor = Cursor(ax)
+        self.cursor = SnaptoCursor(self.vol, self.y, self.x)
+        plt.connect('motion_notify_event', self.cursor.mouse_move)
+
+        self.vol.plot(self.y, self.x, linewidth = 2)
+
+        # Hace que matlplolib controle todas las figuras con sus propios hilos de forma independiente a la gui principal
+        # sustituye a la funcion plt.show()
+        plt.ion()
+        plt.show()
 
 
 if __name__ == '__main__':

@@ -1,8 +1,14 @@
 import sys
-from PySide import QtCore, QtGui
 import numpy as np
 import pyqtgraph as pg
+from PySide import QtCore, QtGui
 from ventana_MP_volumen import Ui_Form
+import matplotlib as mpl
+
+mpl.use('Qt4Agg')
+mpl.rcParams['backend.qt4']='PySide'
+import matplotlib.pyplot as plt
+from show_cursor import SnaptoCursor, Cursor
 
 
 class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
@@ -26,7 +32,10 @@ class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
         self.plot.setLabel('left', 'Conversión')
         self.plot.setLabel('bottom', 'Volumen', units='L')
 
+        self.btn_mostrar_resultados.setDisabled(True)
+
         self.btn_ejecutar.clicked.connect(self.ejecutar)
+        self.btn_mostrar_resultados.clicked.connect(self.mostrar_resultado)
         self.btn_reset.clicked.connect(self.resetear)
         self.btn_cerrar.clicked.connect(self.close)
 
@@ -62,14 +71,14 @@ class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
 
     def plotear(self):
 
-        x = np.arange(0, self.conv_fin, self.deltaT)
+        self.x = np.arange(0.05, self.conv_fin+self.deltaT, self.deltaT)
 
         f = np.vectorize(self.f0)
 
-        y = f(x)
+        self.y = f(self.x)
 
         self.plot.clear()
-        curve = self.plot.plot(y, x, pen=None)  ## setting pen=None disables line drawing
+        curve = self.plot.plot(self.y, self.x, pen=None)  ## setting pen=None disables line drawing
         curve.curve.setClickable(True)
         curve.setPen('w')  ## white pen
 
@@ -91,6 +100,8 @@ class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
         self.le_xa.clear()
         self.plot.clear()
 
+        self.btn_mostrar_resultados.setDisabled(True)
+
 
     def ejecutar(self):
 
@@ -104,16 +115,41 @@ class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
             self.le_xa.setText(str(self.conv_fin))
             self.le_volumen.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)))))
 
-if __name__ == '__main__':
-
-    try:
-        app = QtGui.QApplication(sys.argv)
-    except RuntimeError:
-        pass
+        self.btn_mostrar_resultados.setEnabled(True)
 
 
-    # MainWindow = QtGui.QWidget()
-    ui = Reactor_mp_volumen()
-    # ui.setupUi(MainWindow)
-    ui.show()
-    app.exec_()
+    def mostrar_resultado(self):
+
+        self.fig, self.conv = plt.subplots()
+
+        self.conv.set_title('RESULTADO')
+
+        self.conv.set_xlim([min(self.y), max(self.y)])
+        self.conv.set_ylim([min(self.x), max(self.x)])
+
+        self.conv.set_xlabel('Volumen (L)')
+        self.conv.set_ylabel('Conversión')
+
+        # cursor = Cursor(ax)
+        self.cursor = SnaptoCursor(self.conv, self.y, self.x)
+        plt.connect('motion_notify_event', self.cursor.mouse_move)
+
+        self.conv.plot(self.y, self.x, linewidth = 2)
+
+        # Hace que matlplolib controle todas las figuras con sus propios hilos de forma independiente a la gui principal
+        # sustituye a la funcion plt.show()
+        plt.ion()
+        plt.show()
+
+
+try:
+    app = QtGui.QApplication(sys.argv)
+except RuntimeError:
+    pass
+
+
+# MainWindow = QtGui.QWidget()
+ui = Reactor_mp_volumen()
+# ui.setupUi(MainWindow)
+ui.show()
+app.exec_()

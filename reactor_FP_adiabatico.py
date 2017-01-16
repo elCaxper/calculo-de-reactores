@@ -1,11 +1,15 @@
-
-import scipy.integrate as integrate
 import sys
-from PySide import QtCore, QtGui
-from ventana_FP_adiabatico import Ui_Form
 import numpy as np
 import pyqtgraph as pg
+import scipy.integrate as integrate
+from PySide import QtCore, QtGui
+from ventana_FP_adiabatico import Ui_Form
+import matplotlib as mpl
 
+mpl.use('Qt4Agg')
+mpl.rcParams['backend.qt4']='PySide'
+import matplotlib.pyplot as plt
+from show_cursor import SnaptoCursor, Cursor
 
 class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
 
@@ -36,7 +40,10 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
         self.plotT.setLabel('left', 'Temperatura', units='K')
         self.plotT.setLabel('bottom', 'Conversión')
 
+        self.btn_mostrar_resultados.setDisabled(True)
+
         self.btn_ejecutar.clicked.connect(self.ejecutar)
+        self.btn_mostrar_resultados.clicked.connect(self.mostrar_resultado)
         self.btn_reset.clicked.connect(self.resetear)
         self.btn_cerrar.clicked.connect(self.close)
 
@@ -96,21 +103,21 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
 
     def plotear(self):
 
-        x = np.arange(0.01, self.conv_fin, self.deltaT)
+        self.x = np.arange(0.05, self.conv_fin+self.deltaT, self.deltaT)
 
         f = np.vectorize(self.f0)
 
-        y = f(x)
+        self.y = f(self.x)
 
         self.plotV.clear()
         self.plotT.clear()
 
-        curveV = self.plotV.plot(y[0], x, pen=None)  ## setting pen=None disables line drawing
+        curveV = self.plotV.plot(self.y[0], self.x, pen=None)  ## setting pen=None disables line drawing
         curveV.curve.setClickable(True)
         curveV.setPen('w')  ## white pen
         curveV.setShadowPen(pg.mkPen((70, 70, 30), width=6, cosmetic=True))
 
-        curveT = self.plotT.plot(x, y[1], pen=None)  ## setting pen=None disables line drawing
+        curveT = self.plotT.plot(self.x, self.y[1], pen=None)  ## setting pen=None disables line drawing
         curveT.curve.setClickable(True)
         curveT.setPen('w')  ## white pen
         curveT.setShadowPen(pg.mkPen((70, 70, 30), width=6, cosmetic=True))
@@ -139,6 +146,8 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
         self.plotV.clear()
         self.plotT.clear()
 
+        self.btn_mostrar_resultados.setDisabled(True)
+
 
     def ejecutar(self):
 
@@ -154,16 +163,52 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
             self.le_volumen.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)[0]))))
             self.le_temp.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)[1]))))
 
-if __name__ == '__main__':
-
-    try:
-        app = QtGui.QApplication(sys.argv)
-    except RuntimeError:
-        pass
+            self.btn_mostrar_resultados.setEnabled(True)
 
 
-    # MainWindow = QtGui.QWidget()
-    ui = Reactor_FP_adiabatico()
-    # ui.setupUi(MainWindow)
-    ui.show()
-    app.exec_()
+    def mostrar_resultado(self):
+
+        self.fig, (self.vol, self.temp) = plt.subplots(2, 1)
+
+        self.vol.set_title('RESULTADO')
+
+        self.vol.set_xlim([min(self.y[0]), max(self.y[0])])
+        self.vol.set_ylim([min(self.x), max(self.x)])
+        self.vol.set_xlabel('Volumen (L)')
+        self.vol.set_ylabel('Conversión')
+
+        # cursor = Cursor(ax)
+
+        self.cursor1 = SnaptoCursor(self.vol, self.y[0,:], self.x)
+        plt.connect('motion_notify_event', self.cursor1.mouse_move)
+
+        self.vol.plot(self.y[0], self.x, linewidth=2)
+
+
+        self.temp.set_ylim([min(self.y[1]), max(self.y[1])])
+        self.temp.set_xlabel('Conversión')
+        self.temp.set_ylabel('Temperatura (K)')
+
+        self.cursor2 = SnaptoCursor(self.temp, self.x, self.y[1])
+        plt.connect('motion_notify_event', self.cursor2.mouse_move)
+
+
+
+        self.temp.plot(self.x, self.y[1], linewidth = 2)
+
+        # Hace que matlplolib controle todas las figuras con sus propios hilos de forma independiente a la gui principal
+        # sustituye a la funcion plt.show()
+        plt.ion()
+        plt.show()
+
+try:
+    app = QtGui.QApplication(sys.argv)
+except RuntimeError:
+    pass
+
+
+# MainWindow = QtGui.QWidget()
+ui = Reactor_FP_adiabatico()
+# ui.setupUi(MainWindow)
+ui.show()
+app.exec_()

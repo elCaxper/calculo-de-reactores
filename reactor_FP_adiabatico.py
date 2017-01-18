@@ -201,14 +201,17 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
         plt.ion()
         plt.show()
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
+
+if __name__ == '__main__':
+
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
 
-# MainWindow = QtGui.QWidget()
-ui = Reactor_FP_adiabatico()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_FP_adiabatico()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

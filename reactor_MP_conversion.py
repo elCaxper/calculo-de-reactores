@@ -169,15 +169,16 @@ class Reactor_mp_conversion(QtGui.QWidget, Ui_Form):
         plt.ion()
         plt.show()
 
+if __name__ == '__main__':
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
 
-# MainWindow = QtGui.QWidget()
-ui = Reactor_mp_conversion()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_mp_conversion()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

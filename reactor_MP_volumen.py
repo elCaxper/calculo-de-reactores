@@ -142,14 +142,16 @@ class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
         plt.show()
 
 
-try:
-    app = QtGui.QApplication(sys.argv)
-except RuntimeError:
-    pass
+if __name__ == '__main__':
+
+    try:
+        app = QtGui.QApplication(sys.argv)
+    except RuntimeError:
+        pass
 
 
-# MainWindow = QtGui.QWidget()
-ui = Reactor_mp_volumen()
-# ui.setupUi(MainWindow)
-ui.show()
-app.exec_()
+    # MainWindow = QtGui.QWidget()
+    ui = Reactor_mp_volumen()
+    # ui.setupUi(MainWindow)
+    ui.show()
+    app.exec_()

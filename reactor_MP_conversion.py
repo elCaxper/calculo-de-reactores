@@ -84,7 +84,7 @@ class Reactor_mp_conversion(QtGui.QWidget, Ui_Form):
     def plotear(self):
 
         self.x = np.arange(0.5, self.volumen+self.deltaT, self.deltaT)
-        print(self.x)
+
         if self.orden == 0:
             f = np.vectorize(self.f0)
 
@@ -143,7 +143,7 @@ class Reactor_mp_conversion(QtGui.QWidget, Ui_Form):
             else:
                 self.le_xa.setText(str(float("{0:.2f}".format(self.f2(self.volumen)))))
 
-        self.btn_mostrar_resultados.setEnabled(True)
+            self.btn_mostrar_resultados.setEnabled(True)
 
 
     def mostrar_resultado(self):

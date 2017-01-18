@@ -140,7 +140,7 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
         self.le_conv_ini.clear()
         self.le_conv_fin.clear()
         self.le_volumen.clear()
-        self.le_temp.clear()
+        self.le_temperatura.clear()
         self.le_xa1.clear()
         self.le_xa2.clear()
         self.plotV.clear()
@@ -161,7 +161,7 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
             self.le_xa1.setText(str(self.conv_fin))
             self.le_xa2.setText(str(self.conv_fin))
             self.le_volumen.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)[0]))))
-            self.le_temp.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)[1]))))
+            self.le_temperatura.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)[1]))))
 
             self.btn_mostrar_resultados.setEnabled(True)
 
@@ -179,7 +179,7 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
 
         # cursor = Cursor(ax)
 
-        self.cursor1 = SnaptoCursor(self.vol, self.y[0,:], self.x)
+        self.cursor1 = SnaptoCursor(self.vol, self.y[0], self.x)
         plt.connect('motion_notify_event', self.cursor1.mouse_move)
 
         self.vol.plot(self.y[0], self.x, linewidth=2)

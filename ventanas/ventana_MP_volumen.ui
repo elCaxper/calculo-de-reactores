@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1207</width>
-    <height>692</height>
+    <width>1022</width>
+    <height>501</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -49,13 +49,13 @@
        <property name="minimumSize">
         <size>
          <width>400</width>
-         <height>0</height>
+         <height>110</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>400</width>
-         <height>150</height>
+         <height>110</height>
         </size>
        </property>
        <property name="title">
@@ -88,43 +88,72 @@
             </item>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_14">
-              <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-               <widget class="QLabel" name="lb_cao_13">
-                <property name="text">
-                 <string>a [mol]</string>
+              <item>
+               <layout class="QFormLayout" name="formLayout">
+                <property name="fieldGrowthPolicy">
+                 <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
                 </property>
-               </widget>
+                <property name="formAlignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="lb_cao_13">
+                  <property name="text">
+                   <string>a [mol]</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="le_molA">
+                  <property name="maximumSize">
+                   <size>
+                    <width>70</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
-              <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-               <widget class="QLineEdit" name="le_molA">
-                <property name="minimumSize">
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
                  <size>
-                  <width>146</width>
-                  <height>27</height>
+                  <width>20</width>
+                  <height>20</height>
                  </size>
                 </property>
-               </widget>
+               </spacer>
               </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_16">
-              <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-               <widget class="QLabel" name="lb_cao_14">
-                <property name="text">
-                 <string>b [mol]</string>
+              <item>
+               <layout class="QFormLayout" name="formLayout_2">
+                <property name="formAlignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
-               </widget>
-              </item>
-              <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-               <widget class="QLineEdit" name="le_molB">
-                <property name="minimumSize">
-                 <size>
-                  <width>146</width>
-                  <height>27</height>
-                 </size>
-                </property>
-               </widget>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="lb_cao_14">
+                  <property name="text">
+                   <string>b [mol]</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="le_molB">
+                  <property name="maximumSize">
+                   <size>
+                    <width>70</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </item>
@@ -154,24 +183,60 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <property name="spacing">
-           <number>0</number>
+         <layout class="QFormLayout" name="formLayout_3">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
           </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+          <item row="0" column="0">
            <widget class="QLabel" name="lb_cao_6">
             <property name="text">
              <string>Orden de reacción</string>
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+          <item row="2" column="0">
+           <widget class="QLabel" name="lb_cao_5">
+            <property name="text">
+             <string>Concentración inicial [mol/L]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lb_cao_9">
+            <property name="text">
+             <string>Temperatura final [K]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lb_cao_4">
+            <property name="text">
+             <string>Energía de activación [J/mol]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lb_cao_7">
+            <property name="text">
+             <string>Constante ko</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="lb_cao_8">
+            <property name="text">
+             <string>Caudal [L/s]</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QLabel" name="lb_cao">
+            <property name="text">
+             <string>Conversión final</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
            <widget class="QComboBox" name="cb_orden">
             <property name="minimumSize">
              <size>
@@ -196,48 +261,17 @@
             </item>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-           <widget class="QLabel" name="lb_cao_5">
-            <property name="text">
-             <string>Concentración inicial [mol/L]</string>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="le_concentracion_ini">
+            <property name="minimumSize">
+             <size>
+              <width>146</width>
+              <height>27</height>
+             </size>
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-           <widget class="QLineEdit" name="le_concentracion_ini"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_10">
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-           <widget class="QLabel" name="lb_cao_9">
-            <property name="text">
-             <string>Temperatura final [K]</string>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+          <item row="3" column="1">
            <widget class="QLineEdit" name="le_temp_fin">
             <property name="minimumSize">
              <size>
@@ -247,18 +281,7 @@
             </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-           <widget class="QLabel" name="lb_cao_4">
-            <property name="text">
-             <string>Energía de activación [J/mol]</string>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+          <item row="4" column="1">
            <widget class="QLineEdit" name="le_ener_act">
             <property name="minimumSize">
              <size>
@@ -268,18 +291,7 @@
             </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-           <widget class="QLabel" name="lb_cao_7">
-            <property name="text">
-             <string>Constante ko</string>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+          <item row="5" column="1">
            <widget class="QLineEdit" name="le_k">
             <property name="minimumSize">
              <size>
@@ -289,18 +301,7 @@
             </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-           <widget class="QLabel" name="lb_cao_8">
-            <property name="text">
-             <string>Caudal [L/s]</string>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+          <item row="6" column="1">
            <widget class="QLineEdit" name="le_caudal">
             <property name="minimumSize">
              <size>
@@ -310,34 +311,7 @@
             </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <spacer name="verticalSpacer_4">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_13">
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-           <widget class="QLabel" name="lb_cao">
-            <property name="text">
-             <string>Conversión final</string>
-            </property>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+          <item row="8" column="1">
            <widget class="QLineEdit" name="le_conv_fin">
             <property name="minimumSize">
              <size>
@@ -346,6 +320,38 @@
              </size>
             </property>
            </widget>
+          </item>
+          <item row="7" column="0">
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>15</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>15</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </item>
@@ -392,7 +398,7 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>20</height>
+           <height>10</height>
           </size>
          </property>
         </spacer>
@@ -401,7 +407,7 @@
         <widget class="PlotWidget" name="plot">
          <property name="minimumSize">
           <size>
-           <width>685</width>
+           <width>500</width>
            <height>0</height>
           </size>
          </property>
@@ -415,34 +421,52 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_11">
        <item>
-        <spacer name="horizontalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+        <layout class="QFormLayout" name="formLayout_4">
+         <property name="topMargin">
+          <number>0</number>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lb_cao_10">
+           <property name="text">
+            <string>Xa</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="le_xa">
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-        <widget class="QLabel" name="lb_cao_10">
-         <property name="text">
-          <string>Xa</string>
+       <item>
+        <layout class="QFormLayout" name="formLayout_5">
+         <property name="topMargin">
+          <number>0</number>
          </property>
-        </widget>
-       </item>
-       <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-        <widget class="QLineEdit" name="le_xa">
-         <property name="minimumSize">
-          <size>
-           <width>146</width>
-           <height>27</height>
-          </size>
-         </property>
-        </widget>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lb_cao_2">
+           <property name="text">
+            <string>Volumen [L]</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="le_volumen">
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <spacer name="horizontalSpacer_7">
@@ -457,52 +481,37 @@
          </property>
         </spacer>
        </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <spacer name="horizontalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+        <widget class="QPushButton" name="btn_mostrar_resultados">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item alignment="Qt::AlignRight|Qt::AlignVCenter">
-        <widget class="QLabel" name="lb_cao_2">
-         <property name="text">
-          <string>Volumen [L]</string>
-         </property>
-        </widget>
-       </item>
-       <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
-        <widget class="QLineEdit" name="le_volumen">
          <property name="minimumSize">
           <size>
-           <width>146</width>
-           <height>27</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_8">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
+           <width>0</width>
            <height>20</height>
           </size>
          </property>
-        </spacer>
+         <property name="baseSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Mostrar Resultados</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -524,22 +533,6 @@
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_17">
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>80</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item>
         <widget class="QPushButton" name="btn_ejecutar">
          <property name="sizePolicy">
@@ -571,22 +564,6 @@
           <string>CALCULAR</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>80</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </item>
@@ -631,18 +608,18 @@
         <widget class="QPushButton" name="btn_cerrar">
          <property name="minimumSize">
           <size>
-           <width>100</width>
+           <width>200</width>
            <height>40</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>100</width>
+           <width>200</width>
            <height>40</height>
           </size>
          </property>
          <property name="text">
-          <string>VOLVER</string>
+          <string>Volver al menú principal</string>
          </property>
         </widget>
        </item>

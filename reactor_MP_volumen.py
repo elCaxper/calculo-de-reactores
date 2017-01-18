@@ -115,7 +115,7 @@ class Reactor_mp_volumen(QtGui.QWidget, Ui_Form):
             self.le_xa.setText(str(self.conv_fin))
             self.le_volumen.setText(str(float("{0:.2f}".format(self.f0(self.conv_fin)))))
 
-        self.btn_mostrar_resultados.setEnabled(True)
+            self.btn_mostrar_resultados.setEnabled(True)
 
 
     def mostrar_resultado(self):

@@ -151,7 +151,7 @@ class Reactor_FP_isotermo(QtGui.QWidget,Ui_Form):
             else:
                 self.le_volumen.setText(str(float("{0:.2f}".format(self.f2(self.conv_fin)))))
 
-        self.btn_mostrar_resultados.setEnabled(True)
+            self.btn_mostrar_resultados.setEnabled(True)
 
 
     def mostrar_resultado(self):

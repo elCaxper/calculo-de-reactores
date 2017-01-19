@@ -1,0 +1,101 @@
+\documentclass[20pt,a4paper]{extarticle}
+\usepackage[a4paper,margin=6mm]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\title{Diseño de reactores ideales}
+\author{Gustavo Plaza Roma y Jesús Casado Gonzalez}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{2} % Para no mostrar subsubsections en el indice
+%\tableofcontents
+
+\section{Introducción}
+	Esta aplicación se ha desarrollado usando Python 3, la interfaz gráfica se ha creado con el programa \textit{Qt Designer} y se ha transformado a Python para que sea compatible con la librería \textit{PySide 1.2.4}. 
+	
+	Para el correcto funcionamiento de la aplicación es necesario tener los siguientes módulos instalados:
+	\begin{itemize}
+		\item Pyqtgraph para poder visualizar gráficas dentro de la aplicación Qt.
+		\item Matplotlib para poder visualizar y exportar los resultado de los cálculos.
+		\item Scipy permite realizar las distintas operaciones matemáticas.
+		\item Numpy proporciona las clases necesarias para operar con vectores.
+	\end{itemize}
+
+
+\section{Reactor discontinuo}
+	
+	Son aquellos que trabajan por cargas, es decir se introduce una alimentación, y se espera un tiempo dado, que viene determinado por la cinética de la reacción, tras el cual se saca el producto.
+	
+	\subsection{Reactor discontinuo isotermo}
+		La ecuación que proporciona el tiempo de reacción en este modo de operación es:
+		
+		\begin{equation*}
+			t = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}{(-r_a)}
+		\end{equation*}
+		
+		Donde $(-r_a)$ se puede calcular como:
+		
+		\begin{equation*}
+			(-r_a) = K \cdot C_{A0}^n (1-X_A)^n; ~~~~~ K = K_0\exp\left(\frac{-E_a}{RT}\right)
+		\end{equation*}
+		
+		Según el orden de reacción el tiempo se podrá calcular como:
+		
+		\begin{itemize}
+			\item Orden 0: $ t = \frac{C_{A0}}{K}(X_A-X_{A0})$
+			\item Orden 1: $ t = \frac{1}{K}\ln\left(\frac{1-X_{A0}}{1-X_A}\right)$
+			\item Orden 2: $ t = \frac{1}{KC_{A0}}\left(\frac{X_A}{1- X_A}\right)$
+		\end{itemize}
+	
+	
+	\subsection{Reactor discontinuo adiabático}
+		La ecuación que proporciona el tiempo de reacción en este modo de operación es:
+	
+		\subsubsection{Balance de materia}
+			\begin{equation*}
+			t = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}{(-r_a)}
+			\end{equation*}
+			
+			Donde $(-r_a)$ se puede calcular como:
+			
+			\begin{equation*}
+			(-r_a) = K \cdot C_{A0}^n (1-X_A)^n; ~~~~~ K = K_0\exp\left(\frac{-E_a}{RT}\right)
+			\end{equation*}
+			
+		\subsubsection{Balance de energía}
+			\begin{equation*}
+				T = T_0 + \frac{(-\Delta H_R)C_{A0}}{\rho C_p}(X_A-X_{A0})
+			\end{equation*}
+			
+	\subsection{Reactor discontinuo no discontinuo y no adiabático}
+		La ecuación que proporciona el tiempo de reacción en este modo de operación es:
+		
+		\subsubsection{Balance de materia}
+			\begin{equation*}
+				\frac{dt}{dX_A} = \frac{C_{A0}}{K_0 \exp\left(\frac{-E}{RT}\right) C_{A0}^n (1-X_A)^n}
+			\end{equation*}
+			
+		\subsubsection{Balance de energía}
+			\begin{equation*}
+				\frac{dT}{dX_A} = \frac{(-\Delta H_R)C_{A0}}{\rho C_p} + \frac{C_{A0}US(T_c-T)}{V\rho C_p K_0 \exp\left(\frac{-E_a}{RT}\right)C_{A0}^n(1-X_A)^n}
+			\end{equation*}
+			
+\section{Condiciones óptimas}
+	\subsection{Conversión óptima}
+		\begin{equation*}
+			X_{A_{opt}} = 1- \frac{C_R a}{(\Delta w) C_{A0}VK}
+		\end{equation*}		
+		
+	\subsection{Tiempo óptimo de reacción}
+		\begin{equation*}
+			t_{opt} = \frac{1}{K}\ln \left(\frac{(\Delta w)C_{A0}VK}{C_R a}\right)
+		\end{equation*}
+		
+
+
+\end{document}

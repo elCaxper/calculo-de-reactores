@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.webView.settings().setAttribute(QtWebKit.QWebSettings.PluginsEnabled, True)
         self.webView = QtWebKit.QWebView(self.centralWidget)
         self.webView.setGeometry(QtCore.QRect(10, 20, 1000, 700))
-        url = "/home/kaiser/PythonProjects/Gustavo/Master/app_reactores/calculo-de-reactores/guia/maths.html"
+        url = "/home/kaiser/PythonProjects/Gustavo/Master/app_reactores/calculo-de-reactores/guia/guia_usuario.html"
         print(url)
         self.webView.load(QUrl(url))
         # QtGui.QDesktopServices.openUrl(url)

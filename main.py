@@ -12,7 +12,7 @@ from condiciones_optimas import Reac_dis_cond_optimas
 
 from reactor_FP_isotermo import Reactor_FP_isotermo
 from reactor_FP_adiabatico import Reactor_FP_adiabatico
-
+from reactor_FP_general import Reactor_FP_general
 from reactor_MP_conversion import Reactor_mp_conversion
 from reactor_MP_volumen import Reactor_mp_volumen
 
@@ -34,6 +34,7 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
 
         self.btn_con_iso.clicked.connect(self.ejecutar_con_iso)
         self.btn_con_adi.clicked.connect(self.ejecutar_con_adi)
+        self.btn_con_no_iso_no_adi.clicked.connect(self.ejecutar_con_no_iso_no_adi)
 
         self.btn_fijo_conv.clicked.connect(self.ejecutar_fijo_con)
         self.btn_fijo_vol.clicked.connect(self.ejecutar_fijo_vol)
@@ -48,6 +49,7 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
 
         self.reac_con_iso = None
         self.reac_con_adi = None
+        self.reac_con_no_iso_no_adi = None
 
         self.reac_fijo_con = None
         self.reac_fijo_vol = None
@@ -91,6 +93,11 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
             self.reac_con_adi = Reactor_FP_adiabatico()
         self.reac_con_adi.show()
 
+    def ejecutar_con_no_iso_no_adi(self):
+        if self.reac_con_no_iso_no_adi == None:
+            self.reac_con_no_iso_no_adi = Reactor_FP_general()
+        self.reac_con_no_iso_no_adi.show()
+
     def ejecutar_fijo_con(self):
         if self.reac_fijo_con == None:
             self.reac_fijo_con = Reactor_mp_conversion()
@@ -100,11 +107,6 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
         if self.reac_fijo_vol == None:
             self.reac_fijo_vol = Reactor_mp_volumen()
         self.reac_fijo_vol.show()
-
-
-
-
-
 
 
 class Crear_programa(QMainWindow, Ventana_principal):

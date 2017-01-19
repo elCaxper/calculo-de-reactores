@@ -7,7 +7,7 @@
 
 \title{Diseño de reactores ideales}
 \author{Gustavo Plaza Roma y Jesús Casado Gonzalez}
-
+%\geometry{paperheight=5000pt} % Lo vamos a usar para que solo haya una página,
 \begin{document}
 
 \maketitle
@@ -96,6 +96,24 @@
 			t_{opt} = \frac{1}{K}\ln \left(\frac{(\Delta w)C_{A0}VK}{C_R a}\right)
 		\end{equation*}
 		
-
-
+\section{Reactor continuo}
+	\subsection{Cálculo del volumen}
+		\subsubsection{Balance de materia}
+			\begin{equation*}
+				V= \frac{X_{AF}v_0C_{A0}}{(-r_a)_f}
+			\end{equation*}
+			
+			Donde $(-r_a)_f$ se calcula como:
+			
+			\begin{equation*}
+				(-r_a)_f = K_fC_{A0}^n (1-X_{Af})^n; ~~~~~ K_f = K_0 \exp \left(\frac{-E_a}{RT_f}\right)
+			\end{equation*}
+	
+	\subsection{Cálculo de la conversión}
+		\subsubsection{Balance de materia}
+			\begin{itemize}
+				\item Orden 0: $X_{Af} = \frac{VK_f}{v_0C_{A0}}$
+				\item Orden 1: $X_{Af} = \frac{VK_f}{v_0+K_fV}$
+				\item Orden 2: $X_{Af} = \frac{\left(\frac{v_0}{VK_fC_{A0}}+2\right)\pm \sqrt{\left(\frac{v_0}{VK_fC_{A0}}+2\right)^2-4}}{2}$
+			\end{itemize}
 \end{document}

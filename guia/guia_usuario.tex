@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 
 \title{Diseño de reactores ideales}
-\author{Gustavo Plaza Roma y Jesús Casado Gonzalez}
+\author{Gustavo Plaza Roma y Jesús Casado González}
 %\geometry{paperheight=5000pt} % Lo vamos a usar para que solo haya una página,
 \begin{document}
 
@@ -34,23 +34,24 @@
 	\subsection{Reactor discontinuo isotermo}
 		La ecuación que proporciona el tiempo de reacción en este modo de operación es:
 		
-		\begin{equation*}
-			t = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}{(-r_a)}
-		\end{equation*}
+		\subsubsection{Balance de materia}
+			\begin{equation*}
+				t = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}{(-r_a)}
+			\end{equation*}
 		
-		Donde $(-r_a)$ se puede calcular como:
+			Donde $(-r_a)$ se puede calcular como:
 		
-		\begin{equation*}
-			(-r_a) = K \cdot C_{A0}^n (1-X_A)^n; ~~~~~ K = K_0\exp\left(\frac{-E_a}{RT}\right)
-		\end{equation*}
-		
-		Según el orden de reacción el tiempo se podrá calcular como:
-		
-		\begin{itemize}
-			\item Orden 0: $ t = \frac{C_{A0}}{K}(X_A-X_{A0})$
-			\item Orden 1: $ t = \frac{1}{K}\ln\left(\frac{1-X_{A0}}{1-X_A}\right)$
-			\item Orden 2: $ t = \frac{1}{KC_{A0}}\left(\frac{X_A}{1- X_A}\right)$
-		\end{itemize}
+			\begin{equation*}
+				(-r_a) = K \cdot C_{A0}^n (1-X_A)^n; ~~~~~ K = K_0\exp\left(\frac{-E_a}{RT}\right)
+			\end{equation*}
+			
+			Según el orden de reacción el tiempo se podrá calcular como:
+			
+			\begin{itemize}
+				\item Orden 0: $ t = \frac{C_{A0}}{K}(X_A-X_{A0})$
+				\item Orden 1: $ t = \frac{1}{K}\ln\left(\frac{1-X_{A0}}{1-X_A}\right)$
+				\item Orden 2: $ t = \frac{1}{KC_{A0}}\left(\frac{X_A}{1- X_A}\right)$
+			\end{itemize}
 	
 	
 	\subsection{Reactor discontinuo adiabático}
@@ -95,6 +96,91 @@
 		\begin{equation*}
 			t_{opt} = \frac{1}{K}\ln \left(\frac{(\Delta w)C_{A0}VK}{C_R a}\right)
 		\end{equation*}
+		
+		
+\section{Reactor Flujo Pistón}
+		
+	El reactor de flujo pistón trabaja en estado estacionario. Esto significa que las propiedades no varían con el tiempo. Se dice que un fluido circula por un tubo en flujo pistón cuando no existen gradientes radiales y cuando no hay ningún tipo de mezcla (no existe difusión) axial.
+		
+	\subsection{Reactor flujo pistón isotermo}
+		En los reactores de flujo pistón isotérmicos la temperatura no varía con la posición en el reactor. Además varía con el tiempo por tratarse de un reactor de flujo pistón en estado estacionario.
+		
+		\subsubsection{Balance de materia}
+			\begin{equation*}
+			\tau = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}{(-r_a)}
+			\end{equation*}
+			
+			Donde $(-r_a)$ se puede calcular como:
+			
+			\begin{equation*}
+			(-r_a) = K \cdot C_{A}^n
+			\end{equation*}
+			
+			\begin{equation*}
+			 K = K_0\exp\left(\frac{-E_a}{RT}\right);~~~~~~
+			 C_{A} = C_{A0}(\frac{1 - X_A}{1 + \epsilon X_A})
+			\end{equation*}
+			
+			El término $\epsilon$ se calcula con ayuda de la siguiente expresión:
+			
+			\begin{equation*}
+			\epsilon = \frac{V_{X=1} - V_{X=0}}{V_{X=0}}
+			\end{equation*}
+			
+			Finalmente, según el orden de reacción el volumen se podrá calcular como:
+			
+			\begin{itemize}
+				\item Orden 0: $ \tau = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}K $
+				
+				\item Orden 1: $ \tau = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}K $
+				
+				\item Orden 2: $ \tau = \frac{1}{C_{A}}\int_{X_{A0}}^{X_A}\frac{(1+\epsilon X_A)^2dX_A}{K(1-{X_A}^2)} $
+			
+			\end{itemize}
+		
+		
+		\subsection{Reactor flujo pistón adiabático}
+		Este reactor está aislado del exterior. No existe transmisión de calor con el exterior. Esto hace que a lo largo del reactor se produzca un aumento o disminución de temperatura en el caso de que tengamos reacciones endotérmicas o exotérmicas respectivamente.
+		
+		\subsubsection{Balance de materia}
+		\begin{equation*}
+		\tau = C_{A0}\int_{X_{A0}}^{X_A}\frac{dX_A}{(-r_a)}
+		\end{equation*}
+		
+			Donde $(-r_a)$ se puede calcular como:
+			
+			\begin{equation*}
+			(-r_a) = K \cdot C_{A}^n
+			\end{equation*}
+			
+			\begin{equation*}
+			K = K_0\exp\left(\frac{-E_a}{RT}\right);~~~~~~
+			C_{A} = C_{A0}(\frac{1 - X_A}{1 + \epsilon X_A})
+			\end{equation*}
+			
+				El término $\epsilon$ se calcula con ayuda de la siguiente expresión:
+				
+				\begin{equation*}
+				\epsilon = \frac{V_{X=1} - V_{X=0}}{V_{X=0}}
+				\end{equation*}
+				
+		\subsubsection{Balance de energía}
+			\begin{equation*}
+			T = T_0 + \frac{(-\Delta H_R)}{C_p}(X_A-X_{A0})
+			\end{equation*}
+		
+		\subsection{Reactor flujo pistón no discontinuo y no adiabático}
+		
+		\subsubsection{Balance de materia}
+		\begin{equation*}
+		\frac{dX_A}{dl} = \frac{(-r_a)\pi D^2 L}{4v_0C_A} 
+		\end{equation*}
+		
+		\subsubsection{Balance de energía}
+		\begin{equation*}
+		\frac{dT}{dl} = \frac{(-\Delta H_R)(-r_a)\pi D^2 L}{4v_0C_AC_P} + \frac{UP(T_c-T)}{v_0C_P}
+		\end{equation*}
+		
 		
 \section{Reactor continuo}
 	\subsection{Cálculo del volumen}

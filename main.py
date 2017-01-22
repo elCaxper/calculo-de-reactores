@@ -109,7 +109,7 @@ class Seleccionar_reactor(QtGui.QWidget, Ventana_seleccion):
         self.reac_fijo_vol.show()
 
 
-class Crear_programa(QMainWindow, Ventana_principal):
+class Crear_programa(QtGui.QWidget, Ventana_principal):
     def __init__(self):
         super(Crear_programa, self).__init__(None)
         self.setupUi(self)
@@ -128,6 +128,7 @@ class Crear_programa(QMainWindow, Ventana_principal):
         self.lb_foto_1.setScaledContents(True)
         self.lb_foto_2.resize(0.1 * self.lb_foto_2.pixmap().size())
         self.lb_foto_1.resize(0.1 * self.lb_foto_2.pixmap().size())
+        print(self.lb_foto_1.pixmap().size())
 
         self.btn_salir.clicked.connect(self.close)
 
@@ -135,7 +136,7 @@ class Crear_programa(QMainWindow, Ventana_principal):
 
         self.mostrar_guia.clicked.connect(self.mostrar_ayuda)
 
-        self.visor_ayuda =None
+        self.visor_ayuda = None
 
 
         self.center()

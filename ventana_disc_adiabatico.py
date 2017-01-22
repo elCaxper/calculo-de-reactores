@@ -175,7 +175,7 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        Form.setWindowTitle(QtGui.QApplication.translate("Form", "DIRe", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_10.setText(QtGui.QApplication.translate("Form", "Xa", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_2.setText(QtGui.QApplication.translate("Form", "Tiempo [min]", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_mostrar_resultado.setText(QtGui.QApplication.translate("Form", "Mostrar Resultado", None, QtGui.QApplication.UnicodeUTF8))

@@ -76,7 +76,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Continuo</string>
+    <string>Flujo Pistón</string>
    </property>
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
@@ -122,7 +122,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Lecho Fijo</string>
+    <string>Mezcla Perfecta</string>
    </property>
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">

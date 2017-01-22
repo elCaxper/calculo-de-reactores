@@ -139,7 +139,7 @@ class Optimizacion(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        Form.setWindowTitle(QtGui.QApplication.translate("Form", "DIRe", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("Form", "Conversión  optima (%): ", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("Form", "Tiempo óptimo de operación (s): ", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_calcular.setText(QtGui.QApplication.translate("Form", "Calcular", None, QtGui.QApplication.UnicodeUTF8))

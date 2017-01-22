@@ -50,7 +50,7 @@ class Ventana_principal(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        Form.setWindowTitle(QtGui.QApplication.translate("Form", "DIRe", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_titulo.setText(QtGui.QApplication.translate("Form", "Diseño de Reactores Ideales", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_foto_2.setText(QtGui.QApplication.translate("Form", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_foto_1.setText(QtGui.QApplication.translate("Form", "TextLabel", None, QtGui.QApplication.UnicodeUTF8))

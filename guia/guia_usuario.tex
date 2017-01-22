@@ -5,9 +5,11 @@
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 
+\usepackage{eurosym}
+
 \title{Diseño de reactores ideales}
 \author{Gustavo Plaza Roma y Jesús Casado González}
-%\geometry{paperheight=5000pt} % Lo vamos a usar para que solo haya una página,
+\geometry{paperheight=6900pt} % Lo vamos a usar para que solo haya una página,
 \begin{document}
 
 \maketitle
@@ -52,6 +54,16 @@
 				\item Orden 1: $ t = \frac{1}{K}\ln\left(\frac{1-X_{A0}}{1-X_A}\right)$
 				\item Orden 2: $ t = \frac{1}{KC_{A0}}\left(\frac{X_A}{1- X_A}\right)$
 			\end{itemize}
+		
+		Los parámetros del reactor son: 
+		\begin{itemize}
+			\item Orden de reacción.
+			\item Temperatura inicial [K].
+			\item Concentración inicial [mol/l].
+			\item Energía de activación [J/mol].
+			\item Constante $k_0$.
+			\item Conversión inicial y final.
+		\end{itemize}
 	
 	
 	\subsection{Reactor discontinuo adiabático}
@@ -73,7 +85,23 @@
 				T = T_0 + \frac{(-\Delta H_R)C_{A0}}{\rho C_p}(X_A-X_{A0})
 			\end{equation*}
 			
-	\subsection{Reactor discontinuo no discontinuo y no adiabático}
+		Los parámetros necesarios para el diseño del reactor son:
+		
+		\begin{itemize}
+			\item Orden de reacción.
+			\item Temperatura inicial [K].
+			\item Concentración inicial [mol/l].
+			\item Energía de activación [J/mol].
+			\item Constante $k_0$.
+			\item Calor de reacción [J/mol].
+			\item Peso molecular [g/mol].
+			\item Calor específico [J/(kg·K)].
+			\item Densidad de la mezcla [kg/m3].
+			\item Tipo de reacción (exotérmica, endotérmica).
+			\item Conversión inicial y final.
+		\end{itemize}
+			
+	\subsection{Reactor discontinuo no isotermo y no adiabático}
 		La ecuación que proporciona el tiempo de reacción en este modo de operación es:
 		
 		\subsubsection{Balance de materia}
@@ -86,6 +114,25 @@
 				\frac{dT}{dX_A} = \frac{(-\Delta H_R)C_{A0}}{\rho C_p} + \frac{C_{A0}US(T_c-T)}{V\rho C_p K_0 \exp\left(\frac{-E_a}{RT}\right)C_{A0}^n(1-X_A)^n}
 			\end{equation*}
 			
+		Los parámetros necesarios para el diseño del reactor son:
+		
+		\begin{itemize}
+			\item Orden de reacción.
+			\item Temperatura inicial [K].
+			\item Concentración inicial [mol/l].
+			\item Energía de activación [J/mol].
+			\item Constante $k_0$.
+			\item Calor de reacción [J/mol].
+			\item Peso molecular [g/mol].
+			\item Calor específico [J/(kg·K)].
+			\item Densidad de la mezcla [kg/m3].
+			\item Coeficiente de transmisión de calor [W/(m·K)].
+			\item Área de transmisión de calor [m2].
+			\item Volumen [m3]. 
+			\item Tipo de reacción (exotérmica, endotérmica).
+			\item Conversión inicial y final.
+		\end{itemize}
+			
 \section{Condiciones óptimas}
 	\subsection{Conversión óptima}
 		\begin{equation*}
@@ -96,6 +143,20 @@
 		\begin{equation*}
 			t_{opt} = \frac{1}{K}\ln \left(\frac{(\Delta w)C_{A0}VK}{C_R a}\right)
 		\end{equation*}
+		
+		
+		Los parámetros necesarios para el cálculo de las condiciones óptimas son:
+		
+		\begin{itemize}
+			\item Orden de reacción.
+			\item Temperatura inicial [K].
+			\item Concentración inicial [mol/l].
+			\item Energía de activación [J/mol].
+			\item Constante $k_0$.
+			\item Volumen [m3]. 
+			\item Coste de reacción [\euro/s]
+			\item Valor aumentado por mol transformado [\euro].
+		\end{itemize}
 		
 		
 \section{Reactor Flujo Pistón}

@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
 
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "MainWindow", None, QtGui.QApplication.UnicodeUTF8))
+        MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "DIRe", None, QtGui.QApplication.UnicodeUTF8))
 
 from PySide import QtWebKit
 

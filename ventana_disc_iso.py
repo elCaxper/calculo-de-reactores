@@ -131,7 +131,7 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        Form.setWindowTitle(QtGui.QApplication.translate("Form", "DIRe", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_2.setTitle(QtGui.QApplication.translate("Form", "Parámetros", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_6.setText(QtGui.QApplication.translate("Form", "Orden Reacción", None, QtGui.QApplication.UnicodeUTF8))
         self.cb_orden.setItemText(0, QtGui.QApplication.translate("Form", "0", None, QtGui.QApplication.UnicodeUTF8))

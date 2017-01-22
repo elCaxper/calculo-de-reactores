@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ventana_seleccion.ui'
 #
-# Created: Sat Jan  7 22:32:50 2017
+# Created: Sun Jan 22 15:58:14 2017
 #      by: pyside-uic 0.2.15 running on PySide 1.2.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -75,17 +75,17 @@ class Ventana_seleccion(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
-        Form.setWindowTitle(QtGui.QApplication.translate("Form", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        Form.setWindowTitle(QtGui.QApplication.translate("Form", "DIRe", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setTitle(QtGui.QApplication.translate("Form", "Discontinuo", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_dis_iso.setText(QtGui.QApplication.translate("Form", "Isotermo", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_dis_adi.setText(QtGui.QApplication.translate("Form", "Adiabático", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_dis_no_iso_no_adi.setText(QtGui.QApplication.translate("Form", "No isotermo/ No adiabático", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_dis_con.setText(QtGui.QApplication.translate("Form", "Condiciones óptimas", None, QtGui.QApplication.UnicodeUTF8))
-        self.groupBox_2.setTitle(QtGui.QApplication.translate("Form", "Continuo", None, QtGui.QApplication.UnicodeUTF8))
+        self.groupBox_2.setTitle(QtGui.QApplication.translate("Form", "Flujo Pistón", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_con_iso.setText(QtGui.QApplication.translate("Form", "Isotermo", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_con_adi.setText(QtGui.QApplication.translate("Form", "Adiabático", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_con_no_iso_no_adi.setText(QtGui.QApplication.translate("Form", "No isotermo/ No adiabático", None, QtGui.QApplication.UnicodeUTF8))
-        self.groupBox_3.setTitle(QtGui.QApplication.translate("Form", "Lecho Fijo", None, QtGui.QApplication.UnicodeUTF8))
+        self.groupBox_3.setTitle(QtGui.QApplication.translate("Form", "Mezcla Perfecta", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_fijo_vol.setText(QtGui.QApplication.translate("Form", "Cálculo del volumen", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_fijo_conv.setText(QtGui.QApplication.translate("Form", "Cálculo de la conversión", None, QtGui.QApplication.UnicodeUTF8))
         self.btn_salir.setText(QtGui.QApplication.translate("Form", "Salir", None, QtGui.QApplication.UnicodeUTF8))

@@ -25,7 +25,7 @@ except AttributeError:
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(1022, 526)
+        Form.resize(1022, 550)
         self._2 = QtGui.QHBoxLayout(Form)
         self._2.setContentsMargins(-1, 20, -1, 25)
         self._2.setObjectName(_fromUtf8("_2"))
@@ -199,6 +199,7 @@ class Ui_Form(object):
         self.formLayout_11.setObjectName(_fromUtf8("formLayout_11"))
         self.le_xa = QtGui.QLineEdit(Form)
         self.le_xa.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.le_xa.setReadOnly(True)
         self.le_xa.setObjectName(_fromUtf8("le_xa"))
         self.formLayout_11.setWidget(0, QtGui.QFormLayout.FieldRole, self.le_xa)
         self.lb_cao_10 = QtGui.QLabel(Form)
@@ -215,6 +216,7 @@ class Ui_Form(object):
         self.formLayout_10.setWidget(0, QtGui.QFormLayout.LabelRole, self.lb_cao_2)
         self.le_volumen = QtGui.QLineEdit(Form)
         self.le_volumen.setMaximumSize(QtCore.QSize(100, 16777215))
+        self.le_volumen.setReadOnly(True)
         self.le_volumen.setObjectName(_fromUtf8("le_volumen"))
         self.formLayout_10.setWidget(0, QtGui.QFormLayout.FieldRole, self.le_volumen)
         self.horizontalLayout_11.addLayout(self.formLayout_10)
@@ -277,7 +279,7 @@ class Ui_Form(object):
         self.horizontalLayout_21.addItem(spacerItem13)
         self.btn_cerrar = QtGui.QPushButton(Form)
         self.btn_cerrar.setMinimumSize(QtCore.QSize(200, 40))
-        self.btn_cerrar.setMaximumSize(QtCore.QSize(100, 40))
+        self.btn_cerrar.setMaximumSize(QtCore.QSize(200, 40))
         self.btn_cerrar.setObjectName(_fromUtf8("btn_cerrar"))
         self.horizontalLayout_21.addWidget(self.btn_cerrar)
         self.verticalLayout_5.addLayout(self.horizontalLayout_21)

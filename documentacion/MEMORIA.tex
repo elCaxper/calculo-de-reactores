@@ -1,0 +1,80 @@
+\documentclass[a4paper]{report}
+\usepackage{makeidx}
+\usepackage{graphicx}
+%\graphicspath{ {./imagenes/} }
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{ifpdf}
+\usepackage{amsmath}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[scaled=1]{helvet}
+\usepackage{courier}
+\usepackage{sectsty}
+\usepackage[titles]{tocloft}
+\usepackage{doxygen}
+\usepackage[spanish]{babel}
+\lstset{language=Python,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Huge Manual de Referencia}\\
+\vspace*{1cm}
+{\Huge DIRe}\\
+\vspace*{1cm}
+{\LARGE Jesus Casado Gonzalez}\\
+\vspace*{0.5cm}
+{\LARGE Gustavo Plaza Roma}\\
+\vspace*{0.5cm}
+{\Large \today}\\
+\end{center}
+\end{titlepage}
+%\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+%\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true}
+\chapter{Introducción}
+\input{introduccion}
+\chapter{Rector Discontinuo}
+\input{reactor_discontinuo}
+\chapter{Condiciones óptimas}
+\input{condiciones_optimas}
+
+\chapter{Reactor Flujo Pistón}
+\input{reactor_flujo_piston}
+\printindex
+\chapter{Reactor Mezcla Perfecta}
+\input{reactor_mezcla_perfecta}
+
+\printindex
+\end{document}

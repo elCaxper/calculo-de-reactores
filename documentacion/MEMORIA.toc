@@ -1,0 +1,15 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Ventana principal y ventana de selecci\IeC {\'o}n}{2}{section.1.1}
+\contentsline {chapter}{\numberline {2}Rector Discontinuo}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Reactor discontinuo isotermo}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Reactor discontinuo adiab\IeC {\'a}tico}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Reactor discontinuo no discontinuo y no adiab\IeC {\'a}tico}{8}{section.2.3}
+\contentsline {chapter}{\numberline {3}Condiciones \IeC {\'o}ptimas}{11}{chapter.3}
+\contentsline {chapter}{\numberline {4}Reactor Flujo Pist\IeC {\'o}n}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Reactor flujo pist\IeC {\'o}n isotermo}{12}{section.4.1}
+\contentsline {section}{\numberline {4.2}Reactor flujo pist\IeC {\'o}n adiab\IeC {\'a}tico}{14}{section.4.2}
+\contentsline {section}{\numberline {4.3}Reactor flujo pist\IeC {\'o}n no adiab\IeC {\'a}tico y no isotermo}{15}{section.4.3}
+\contentsline {chapter}{\numberline {5}Reactor Mezcla Perfecta}{18}{chapter.5}
+\contentsline {section}{\numberline {5.1}C\IeC {\'a}lculo del volumen}{18}{section.5.1}
+\contentsline {section}{\numberline {5.2}C\IeC {\'a}lculo de la conversi\IeC {\'o}n}{20}{section.5.2}

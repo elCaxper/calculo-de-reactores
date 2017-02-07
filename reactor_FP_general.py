@@ -19,9 +19,8 @@ class Reactor_FP_general(QtGui.QWidget, Ui_Form):
         QtGui.QWidget.__init__(self)
         self.setupUi(self)
         self.le_molA.setText('1')
-        self.le_molB.setText('1')
-        self.le_inerte.setText('0')
-        self.rb_exo.setChecked(True)
+        self.le_molB.setText('2')
+        self.rb_endo.setChecked(True)
         self.cb_orden.setCurrentIndex(1)
         self.le_temp_ini.setText('303')
         self.le_concentracion_ini.setText('0.402')
@@ -57,7 +56,6 @@ class Reactor_FP_general(QtGui.QWidget, Ui_Form):
 
         self.molA = float(self.le_molA.text())
         self.molB = float(self.le_molB.text())
-        self.inerte = float(self.le_inerte.text())
         self.orden = int(self.cb_orden.currentText()[0].strip())
         self.temp_ini = float(self.le_temp_ini.text())
         self.cao = float(self.le_concentracion_ini.text())
@@ -81,12 +79,8 @@ class Reactor_FP_general(QtGui.QWidget, Ui_Form):
 
     def calcularFactorExpansion(self):
 
-        if (self.inerte != 0):
-            self.reactivos = self.molA + 1
-            self.productos = self.molB + 1
-        else:
-            self.reactivos = self.molA
-            self.productos = self.molB
+        self.reactivos = self.molA
+        self.productos = self.molB
 
         if (self.reactivos >= self.productos):
             self.factor_exp = (self.reactivos - self.productos)/self.productos
@@ -130,7 +124,6 @@ class Reactor_FP_general(QtGui.QWidget, Ui_Form):
 
         self.le_molA.clear()
         self.le_molB.clear()
-        self.le_inerte.clear()
         self.rb_exo.setChecked(True)
         self.cb_orden.setCurrentIndex(0)
         self.le_temp_ini.clear()
@@ -158,7 +151,7 @@ class Reactor_FP_general(QtGui.QWidget, Ui_Form):
 
     def ejecutar(self):
 
-        if self.le_molA.text() == "" or self.le_molB.text() == "" or self.le_inerte.text() == "" or self.le_temp_ini.text() == "" or self.le_concentracion_ini.text() == "" or self.le_ener_act.text() == "" or self.le_k.text() == "" or self.le_caudal.text() == "" or self.le_ah.text() == "" or self.le_cp.text() == "" or self.le_conv_ini.text() == "" or self.le_conv_fin.text() == "":
+        if self.le_molA.text() == "" or self.le_molB.text() == "" or self.le_temp_ini.text() == "" or self.le_concentracion_ini.text() == "" or self.le_ener_act.text() == "" or self.le_k.text() == "" or self.le_caudal.text() == "" or self.le_ah.text() == "" or self.le_cp.text() == "" or self.le_conv_ini.text() == "" or self.le_conv_fin.text() == "":
             QtGui.QMessageBox.warning(self, "Error en la ejecución", "Alguna/s de las celdas de datos está/n vacía/s. Por favor, revise que ha introducido correctamente todos los datos.", QtGui.QMessageBox.Cancel, QtGui.QMessageBox.NoButton)
         else:
             self.leerDatos()

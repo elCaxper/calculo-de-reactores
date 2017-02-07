@@ -151,30 +151,6 @@
                 </item>
                </layout>
               </item>
-              <item>
-               <layout class="QFormLayout" name="formLayout_4">
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="lb_cao_15">
-                  <property name="text">
-                   <string>Inerte [%]</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QLineEdit" name="le_inerte">
-                  <property name="minimumSize">
-                   <size>
-                    <width>65</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
              </layout>
             </item>
            </layout>

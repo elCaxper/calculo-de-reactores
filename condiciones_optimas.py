@@ -38,12 +38,20 @@ class Reac_dis_cond_optimas(QtGui.QWidget,Optimizacion):
 
 
     def calcular(self):
-        self.x_optimo  = 1- ((self.coste_reac*self.a)/(self.aumento_valor*self.Cao*self.volumen*self.K))
-        self.t_optimo = (1/self.K) * np.log((self.aumento_valor*self.Cao*self.volumen*self.K)/(self.coste_reac*self.a))
+
+        self.x_optimo  = 1 - ((self.coste_reac*self.a)/(self.aumento_valor*(self.Cao**self.orden)*self.volumen*self.K))**(1./self.orden)
+
+        if self.orden==1:
+            self.t_optimo = (1 / self.K) * np.log(
+                (self.aumento_valor * self.Cao * self.volumen * self.K) / (self.coste_reac * self.a))
+        else:
+            print("orden2")
+            self.t_optimo = (1/(self.K*self.Cao))*(self.x_optimo/(1-self.x_optimo))
+
         print(self.x_optimo)
         print(self.t_optimo)
-        self.le_conv_optima.setText(str(self.x_optimo))
-        self.le_tiempo_optimo.setText(str(self.t_optimo))
+        self.le_conv_optima.setText(format(self.x_optimo*100, '.4f'))
+        self.le_tiempo_optimo.setText(format(self.t_optimo, '.4f'))
 
 if __name__ == '__main__':
 
@@ -53,7 +61,7 @@ if __name__ == '__main__':
         pass
 
     # MainWindow = QtGui.QWidget()
-    ui = Reactor_disc_no_adi_no_iso()
+    ui = Reac_dis_cond_optimas()
     # ui.setupUi(MainWindow)
     ui.show()
     app.exec_()

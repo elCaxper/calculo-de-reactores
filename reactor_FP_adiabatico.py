@@ -73,8 +73,10 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
     def calcularFactorExpansion(self):
 
         if (self.inerte != 0):
+            print("mola_antes",self.molA)
             self.reactivos = self.molA + 1
             self.productos = self.molB + 1
+            print("mola_des",self.molA)
         else:
             self.reactivos = self.molA
             self.productos = self.molB
@@ -83,6 +85,8 @@ class Reactor_FP_adiabatico(QtGui.QWidget, Ui_Form):
             self.factor_exp = (self.reactivos - self.productos)/self.productos
         else:
             self.factor_exp = (self.productos - self.reactivos) / self.reactivos
+
+        print("factor",self.factor_exp)
 
 
     def f0(self, conv):

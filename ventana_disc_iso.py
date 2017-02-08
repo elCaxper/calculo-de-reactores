@@ -143,7 +143,7 @@ class Ui_Form(object):
         self.le_concentracion_ini.setText(QtGui.QApplication.translate("Form", "1", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_4.setText(QtGui.QApplication.translate("Form", "Energía de activación [J/mol]", None, QtGui.QApplication.UnicodeUTF8))
         self.le_ener_act.setText(QtGui.QApplication.translate("Form", "62357.25", None, QtGui.QApplication.UnicodeUTF8))
-        self.lb_cao_7.setText(QtGui.QApplication.translate("Form", "Constante ko", None, QtGui.QApplication.UnicodeUTF8))
+        self.lb_cao_7.setText(QtGui.QApplication.translate("Form", "Constante ko [(l/mol)^(n-1)/s]" , None, QtGui.QApplication.UnicodeUTF8))
         self.le_k.setText(QtGui.QApplication.translate("Form", "4e6", None, QtGui.QApplication.UnicodeUTF8))
         self.lb_cao_3.setText(QtGui.QApplication.translate("Form", "Conversión inicial", None, QtGui.QApplication.UnicodeUTF8))
         self.le_conv_ini.setText(QtGui.QApplication.translate("Form", "0.65", None, QtGui.QApplication.UnicodeUTF8))

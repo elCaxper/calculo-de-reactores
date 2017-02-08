@@ -25,7 +25,7 @@ class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
         self.btn_mostrar_resultado.clicked.connect(self.mostrar_resultado)
         self.le_xa.editingFinished.connect(self.handleEditingFinished)
 
-        self.deltaT = 0.005
+        self.deltaT = 0.001
         self.R = 8.3143
         self.plot.setLabel('left', 'Conversión')
         self.plot.setLabel('bottom', 'Tiempo', units='s')
@@ -67,11 +67,13 @@ class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
     def sistema(self,state,x):
         y1, y2 = state
 
-        dy1 = (self.Cao/(self.k*np.exp(-self.ener_act/self.R/y2)*np.power(self.Cao, self.orden)*np.power((1-x), self.orden)))
-        dy2 = ((self.signo*self.calor_reaccion*self.Cao)/(self.densidad*self.calor_especifico))\
-              +((self.Cao*self.coef_transmision*self.area*(self.temp_inter-y2))
-                /(self.volumen*self.densidad*self.k*np.exp(-self.ener_act/self.R/y2)*np.power(self.Cao, self.orden)*np.power((1-x), self.orden)))
+        dy1 = self.Cao / (self.k * np.exp(-self.ener_act / (self.R * y2)) * (self.Cao ** self.orden) * ((1 - x) ** self.orden))
 
+        # dy2 = (signo*calor_reaccion*Cao*peso_molar)/(densidad*calor_especifico)+(coef_transmision*area*(temp_inter-temp))/\
+        #         (volumen*densidad*calor_especifico*k*np.exp(-ener_act/(R*temp))*(Cao**orden)*((1-x)**orden))
+        dy2 = ((self.Cao * self.peso_molecular) / (self.densidad * self.calor_especifico)) * (
+        (self.signo * self.calor_reaccion) + (self.coef_transmision * self.area * (self.temp_inter - y2)) / \
+        (self.volumen * self.k * np.exp(-self.ener_act / (self.R * y2)) * (self.Cao ** self.orden) * ((1 - x) ** self.orden)))
 
         return [dy1, dy2]
 
@@ -81,9 +83,11 @@ class Reactor_disc_no_adi_no_iso(QtGui.QWidget,Ventana_dis_no_iso_no_adi):
         # curve = self.plot.plot(x[:], x[:], pen=None)  ## setting pen=None disables line drawing
 
         # f = np.vectorize(self.sistema)
-        init_state = [self.conv_ini, self.temp_ini]
+        init_state = [0, self.temp_ini]
         self.state = odeint(self.sistema, init_state, self.x)
 
+        print("tiempo max",np.max(self.state[:,0]))
+        print("constante k0", self.k)
 
         # y = f(x)
         print(self.K)
